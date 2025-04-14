@@ -39,7 +39,7 @@ I aspire to become a skilled programmer.
 - RAM: Kingston Fury Beast 32GB (2x16GB) DDR4
 - Storage:
     - C:\ 1TB SSD (WD Blue SN580 NVMe)
-    - D:\ 500GB USB (SSK Portable SSD 512 SCSI Disk Device)
+    - D:\ 500GB USB (SSK Portable SSD 512 Disk Device)
     - E:\ 1TB HDD (TOSHIBA)
     - F:\ 128GB microSD (Samsung EVO Select A2 V30)
     - G:\ 200GB Cloud (Google Drive)
