@@ -56,7 +56,7 @@ I aspire to become a skilled programmer.
 - Webcam: ---
 - Speakers: ---
 - Printer: ---
-- Scanner: ---
+- Scanner: Microtek ScanMaker II
 
 ## Region
 - Germany, Bavaria
