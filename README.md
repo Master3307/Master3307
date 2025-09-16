@@ -53,9 +53,6 @@ I aspire to become a skilled programmer.
     - JBL Tune 230NC TWS
 - Microphone: HyperX QuadCast
 - Operating System: Windows 11 Pro
-- Webcam: ---
-- Speakers: ---
-- Printer: ---
 - Scanner: Microtek ScanMaker II
 
 ## Region
