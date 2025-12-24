@@ -60,9 +60,9 @@ I aspire to become a skilled programmer.
 - Language: German (native), English (fluent)
 
 ## Links
-- [Linktree](https://master3307.netlify.app/linktree/)
+- [Linktree](https://home.master3307.org/linktree/)
 - [GitHub](https://github.com/Master3307)
 - [YouTube](https://www.youtube.com/@Master3307)
-- [Homepage](https://master3307.netlify.app/)
+- [Homepage](https://home.master3307.org)
 
 Thanks for stopping by! Feel free to explore my repositories and projects. 😊
