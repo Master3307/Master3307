@@ -32,8 +32,8 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 - Monitor: 1920x1080 60Hz Samsung S22D300
 
 ## Links
-- [Linktree](https://home.master3307.org/linktree/)
-- [YouTube](https://www.youtube.com/@Master3307)
 - [Homepage](https://home.master3307.org)
+- [YouTube](https://www.youtube.com/@Master3307)
+- [Linktree](https://home.master3307.org/linktree/)
 
 Feel free to explore some of my repositories. :3
