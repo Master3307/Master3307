@@ -1,26 +1,22 @@
-# Hi there, I'm Master3307! 👋
+# Hi there, I'm MrKoby07! :D
 
 Welcome to my README! Here's a little about me:
 
-## Interests
+Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I find myself understanding new things like Software rather quickly. I think ahead and sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back. Also I kind of find psychology very interesting and I like to experiement a little with that :D
+
+## Personal
+- Name: Korbinian
+- Birthday: 09.09.
+- Location: Germany, Bavaria
+- Language: German (native), English (fluent)
+ 
+## Interests/Hobbies
 - Gaming
 - Modding
-- Pixel art
-- Editing pictures
-- Making YouTube videos
+- Archiving
 - Programming
-- Learning new things
-- Exploring new technologies
-- Creating websites
-
-## Goal
-I aspire to become a skilled programmer.
-
-## Favorite Foods
-- Pizza
-- Chicken nuggets
-- Potato Salad
-- Pasta
+- Exploring new things
+- Psychology
 
 ## Skills
 - Fast learner
@@ -29,40 +25,16 @@ I aspire to become a skilled programmer.
 - Creative thinker
 - Strong attention to detail
 
-## Devices
-- Samsung Galaxy S23 FE
-- PC (Windows 11)
-
 ## PC Specs
 - CPU: AMD Ryzen 5 5600X
 - GPU: NVIDIA GeForce RTX 4060 AERO 8GB
 - RAM: Kingston Fury Beast 32GB (2x16GB) DDR4
-- Storage:
-    - C:\ 1TB SSD (WD Blue SN580 NVMe)
-    - D:\ 500GB USB (SSK Portable SSD 512 Disk Device)
-    - E:\ 1TB HDD (TOSHIBA)
-    - F:\ 128GB microSD (Samsung EVO Select A2 V30)
-    - G:\ 2TB Cloud (Google Drive)
 - Monitor:
-    - 2560x1440 59.95Hz Predator Acer XB27HU A
     - 1920x1080 60Hz Samsung S22D300
-- Keyboard: HyperX
-- Mouse: REDRAGON
-- Headset:
-    - HyperX Cloud III
-    - JBL Tune 230NC TWS
-- Microphone: HyperX QuadCast
-- Operating System: Windows 11 Pro
-- Scanner: Microtek ScanMaker II
-
-## Region
-- Germany, Bavaria
-- Language: German (native), English (fluent)
 
 ## Links
 - [Linktree](https://home.master3307.org/linktree/)
-- [GitHub](https://github.com/Master3307)
 - [YouTube](https://www.youtube.com/@Master3307)
 - [Homepage](https://home.master3307.org)
 
-Thanks for stopping by! Feel free to explore my repositories and projects. 😊
+Feel free to explore some of my repositories. :3
