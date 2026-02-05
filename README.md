@@ -29,8 +29,7 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 - CPU: AMD Ryzen 5 5600X
 - GPU: NVIDIA GeForce RTX 4060 AERO 8GB
 - RAM: Kingston Fury Beast 32GB (2x16GB) DDR4
-- Monitor:
-    - 1920x1080 60Hz Samsung S22D300
+- Monitor: 1920x1080 60Hz Samsung S22D300
 
 ## Links
 - [Linktree](https://home.master3307.org/linktree/)
