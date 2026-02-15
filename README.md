@@ -2,7 +2,7 @@
 
 Welcome to my README! Here's a little about me:
 
-Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I find myself understanding new things like Software rather quickly. I think ahead and sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back. Also I kind of find psychology very interesting and I like to experiement a little with that :D
+Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I find myself understanding new things like Software rather quickly. I think ahead and sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back. Also I kind of find psychology very interesting and I like to experiment a little with that :D
 
 ## Personal
 - Name: Korbinian
