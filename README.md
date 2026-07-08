@@ -5,10 +5,10 @@ Welcome to my README! Here's a little about me:
 
 Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I find myself understanding new things like Software rather quickly. I think ahead and sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back. :D
 
----------
+> Feel free to look through these Dropdowns for Information :3
 
-<details open>
-<summary>Personal</summary>
+<details>
+<summary><strong>👤 Personal</strong></summary>
 
 - Name: Korbinian
 - Birthday: 09.09.
@@ -17,10 +17,8 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 
 </details>
 
----------
-
 <details>
-<summary>Interests / Hobbies</summary>
+<summary><strong>🎮 Interests / Hobbies</strong></summary>
 
 - Gaming
 - Modding
@@ -31,10 +29,8 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 
 </details>
 
----------
-
 <details>
-<summary>Skills</summary>
+<summary><strong>🧠 Skills</strong></summary>
 
 - Fast learner
 - Quickly understands different topics
@@ -44,10 +40,17 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 
 </details>
 
----------
+<details>
+<summary><strong>🔗 Links</strong></summary>
+
+- [Homepage](https://home.master3307.org)
+- [Usercard](https://home.master3307.org/card/)
+- [YouTube](https://www.youtube.com/@Master3307)
+
+</details>
 
 <details>
-<summary>PC Specs</summary>
+<summary><strong>🖥️ PC Specs</strong></summary>
 
 - CPU: AMD Ryzen 5 5600X
 - GPU: NVIDIA GeForce RTX 4060 AERO 8GB
@@ -56,21 +59,8 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 
 </details>
 
----------
-
 <details>
-<summary>Links</summary>
-
-- [Homepage](https://home.master3307.org)
-- [Usercard](https://home.master3307.org/card/)
-- [YouTube](https://www.youtube.com/@Master3307)
-
-</details>
-
----------
-
-<details open>
-<summary>Help Translate</summary>
+<summary><strong>🌎 Help Translate</strong></summary>
 
 If you want, help translate my Home Site and other Projects to different Languages. Want a Language added? Tell me!  
 [![Translation status](http://weblate.master3307.org/widget/homesite/multi-auto.svg)](http://weblate.master3307.org/engage/homesite/)
@@ -79,10 +69,8 @@ Feel free to explore some of my repositories. :3
 
 </details>
 
----------
-
-<details open>
-<summary>Other</summary>
+<details>
+<summary><strong>📊 Stats</strong></summary>
 
 [![wakatime](https://wakatime.com/badge/user/229ef515-6448-4da4-8301-8209d6e208dc.svg)](https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc)  
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=dark)  
