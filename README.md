@@ -3,7 +3,7 @@ Hi there 👋 I'm MrKoby07! :D
 
 Welcome to my README! Here's a little about me:
 
-Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I find myself understanding new things like Software rather quickly. I think ahead and sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back. :D
+Formerly I was known as Master3307. I had that username for about 3 years. Generally I am a very thoughtful and careful person. I like to try new things a lot and I think ahead but sometimes even too much. I love to hoard Information and I archive a lot of stuff just because I like to keep things and look back :D
 
 > Feel free to look through these Dropdowns for Information :3
 
@@ -72,9 +72,9 @@ Feel free to explore some of my repositories. :3
 <details>
 <summary><strong>📊 Stats</strong></summary>
 
-[![wakatime](https://wakatime.com/badge/user/229ef515-6448-4da4-8301-8209d6e208dc.svg)](https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc)  
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=dark)  
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=dark)  
+![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=dark)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=Master3307&theme=dark)
 
+[![wakatime](https://wakatime.com/badge/user/229ef515-6448-4da4-8301-8209d6e208dc.svg)](https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc)  
 </details>
