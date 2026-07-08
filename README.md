@@ -37,7 +37,7 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 - [YouTube](https://www.youtube.com/@Master3307)
 
 ## Help Translate
-If you want, help translate my Home Site to differnt Languages. Want a Language added? Tell me!
+If you want, help translate my Home Site and other Projects to differnt Languages. Want a Language added? Tell me!
 [![Translation status](http://weblate.master3307.org/widget/homesite/multi-auto.svg)](http://weblate.master3307.org/engage/homesite/)
 
 Feel free to explore some of my repositories. :3
