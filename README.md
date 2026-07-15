@@ -43,7 +43,7 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 <details>
 <summary><strong>🔗 Links</strong></summary>
 
-- [Homepage](https://home.master3307.org)
+- [HomeSite](https://home.master3307.org)
 - [Usercard](https://home.master3307.org/card/)
 - [YouTube](https://www.youtube.com/@Master3307)
 
