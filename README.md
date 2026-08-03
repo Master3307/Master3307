@@ -1,4 +1,4 @@
-<h1 align="center">Hi there 👋 I'm [MrKoby07](https://home.master3307.org/card)! :D</h1>
+<h1 align="center">Hi there 👋 I'm <a href="https://home.master3307.org/card">MrKoby07</a>! :D</h1>
 
 <p align="center">Welcome to my README! Here's a little about me:</p>
 
@@ -61,7 +61,7 @@ Formerly I was known as Master3307. I had that username for about 3 years. Gener
 <details>
 <summary><strong>🌎 Help Translate</strong></summary>
 
-If you want, help translate my Home Site and other Projects to different Languages. Want a Language added? Tell me!  
+If you want, help translate my Home Site and other Projects to different Languages. Want a Language added? Tell me!
 [![Translation status](http://weblate.master3307.org/widget/homesite/multi-auto.svg)](http://weblate.master3307.org/engage/homesite/)
 
 Feel free to explore some of my repositories. :3
@@ -71,7 +71,7 @@ Feel free to explore some of my repositories. :3
 <details>
 <summary><strong>📊 Stats</strong></summary>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=dark)  
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=dark)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=dark)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=Master3307&theme=dark)
 
