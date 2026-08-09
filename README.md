@@ -1,4 +1,4 @@
-<h1 align="center">Servus 👋 I'm <strong><a href="https://home.master3307.org/card">MrKoby07</a></strong>! :D</h1>
+<h1 align="center">Ja Servus 👋 I'm <strong><a href="https://home.master3307.org/card">MrKoby07</a></strong>! :D</h1>
 
 <p align="center">Welcome to my README! Here's a little about me:</p>
 
