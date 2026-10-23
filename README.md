@@ -71,9 +71,11 @@ Feel free to explore some of my repositories. :3
 <details>
 <summary><strong>📊 Stats</strong></summary>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=dark)
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=dark)
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=Master3307&theme=dark)
+![Master3307 (MrKoby07)](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
+![Top Languages by Repo](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
+![Top Languages by Commit](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
+![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
+![Commits (UTC+2.00)](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&utcOffset=2&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
 
 <a href="https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc"><img src="https://wakatime.com/badge/user/229ef515-6448-4da4-8301-8209d6e208dc.svg" alt="Total time coded since Apr 11 2025"  /></a>
 </details>
