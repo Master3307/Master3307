@@ -21,6 +21,11 @@ const TITLE_COLOR = "#dc8add";
 const SECTION_GAP = 28;
 const MIN_REPOSITORY_WIDTH = 320;
 
+// Animation timing, in seconds.
+const CHARACTER_INTERVAL = 0.035;
+const MAX_TYPING_DURATION = 1.65;
+const ROW_STAGGER = 0.12;
+
 const token = process.env.GITHUB_TOKEN;
 
 if (!token) {
@@ -43,6 +48,46 @@ const escape = (value) =>
         "'": "&apos;",
       })[character],
   );
+
+const segmenter = new Intl.Segmenter("en", {
+  granularity: "grapheme",
+});
+
+function characters(value) {
+  return Array.from(segmenter.segment(String(value)), ({ segment }) => segment);
+}
+
+// Reveal each character without changing its natural position.
+function typingSpans(value, start = 0.2) {
+  const letters = characters(value);
+
+  const interval = Math.min(
+    CHARACTER_INTERVAL,
+    MAX_TYPING_DURATION / Math.max(letters.length - 1, 1),
+  );
+
+  return letters
+    .map((character, index) => {
+      const revealAt = (start + index * interval).toFixed(3);
+
+      return (
+        `<tspan class="typing-character">` +
+        `${escape(character)}` +
+        `<set attributeName="visibility" to="hidden" ` +
+        `begin="0s" dur="${revealAt}s"/>` +
+        `</tspan>`
+      );
+    })
+    .join("");
+}
+
+function textMarkup(x, y, value, attributes = "", start = 0.2) {
+  return (
+    `<text x="${x}" y="${y}" ${attributes} xml:space="preserve">` +
+    typingSpans(value, start) +
+    `</text>`
+  );
+}
 
 function dateInTimezone(date = new Date()) {
   const parts = new Intl.DateTimeFormat("en", {
@@ -92,16 +137,16 @@ function clipToWidth(value, maximumWidth, fontSize = 14) {
     return original;
   }
 
-  const characters = Array.from(original);
+  const letters = Array.from(original);
 
   while (
-    characters.length &&
-    estimatedTextWidth(`${characters.join("")}…`, fontSize) > maximumWidth
+    letters.length &&
+    estimatedTextWidth(`${letters.join("")}…`, fontSize) > maximumWidth
   ) {
-    characters.pop();
+    letters.pop();
   }
 
-  return `${characters.join("")}…`;
+  return `${letters.join("")}…`;
 }
 
 async function graphql(query, variables) {
@@ -312,42 +357,48 @@ function level(count) {
 const fragments = [];
 const definitions = [];
 
-function text(x, y, value, attributes = "") {
+function text(x, y, value, attributes = "", start = 0.2) {
+  fragments.push(textMarkup(x, y, value, attributes, start));
+}
+
+function linkedText(
+  url,
+  x,
+  y,
+  value,
+  attributes = "",
+  title = "",
+  start = 0.2,
+) {
   fragments.push(
-    `<text x="${x}" y="${y}" ${attributes}>${escape(value)}</text>`,
+    `<a href="${escape(url)}">` +
+      (title ? `<title>${escape(title)}</title>` : "") +
+      textMarkup(x, y, value, attributes, start) +
+      `</a>`,
   );
 }
 
-function linkedText(url, x, y, value, attributes = "", title = "") {
+function square(x, y, size, value, title, current = false, delay = 0.4) {
   fragments.push(
-    `<a href="${escape(url)}">
-      <text x="${x}" y="${y}" ${attributes}>
-        ${title ? `<title>${escape(title)}</title>` : ""}
-        ${escape(value)}
-      </text>
-    </a>`,
+    `<g class="cell-arrive" style="--delay:${delay.toFixed(3)}s">
+      <rect
+        x="${x}"
+        y="${y}"
+        width="${size}"
+        height="${size}"
+        rx="${Math.min(3, size / 4)}"
+        fill="${colors[level(value)]}"
+        fill-opacity="${value === 0 ? ".14" : "1"}"
+        stroke="${current ? TITLE_COLOR : TEXT_COLOR}"
+        stroke-opacity="${current ? "1" : ".18"}"
+        stroke-width="${current ? "1.4" : ".6"}">
+        <title>${escape(title)}</title>
+      </rect>
+    </g>`,
   );
 }
 
-function square(x, y, size, value, title, current = false) {
-  fragments.push(
-    `<rect
-      x="${x}"
-      y="${y}"
-      width="${size}"
-      height="${size}"
-      rx="${Math.min(3, size / 4)}"
-      fill="${colors[level(value)]}"
-      fill-opacity="${value === 0 ? ".14" : "1"}"
-      stroke="${current ? TITLE_COLOR : TEXT_COLOR}"
-      stroke-opacity="${current ? "1" : ".18"}"
-      stroke-width="${current ? "1.4" : ".6"}">
-      <title>${escape(title)}</title>
-    </rect>`,
-  );
-}
-
-// Calendar layout
+// Calendar layout.
 
 const gridX = 67;
 const gridY = 94;
@@ -360,7 +411,7 @@ const gridWidth = (WEEKS - 1) * pitch + cellSize;
 const gridRight = gridX + gridWidth;
 const gridBottom = gridY + 6 * pitch + cellSize;
 
-// Include the legend and heading when calculating the left section width.
+// Include the legend and heading when calculating section width.
 
 const legendSize = 15;
 const legendPitch = 22;
@@ -386,13 +437,13 @@ const repositoryWidth = repositoryRight - repositoryX;
 
 const repositoryHeadingY = repositoriesBeside ? 31 : legendBottom + 42;
 
-// Activity header
+// Activity header.
 
-text(PADDING, 31, "Recent Activity", 'class="heading"');
+text(PADDING, 31, "Recent Activity", 'class="heading"', 0.2);
 
-text(PADDING, 55, `Last ${WEEKS} weeks`, 'class="muted"');
+text(PADDING, 55, `Last ${WEEKS} weeks`, 'class="muted"', 0.48);
 
-// Calendar cells and month labels
+// Calendar cells and month labels.
 
 let previousMonth = "";
 let lastMonthLabelX = -Infinity;
@@ -402,6 +453,8 @@ for (let week = 0; week < WEEKS; week++) {
   const month = weekStart.slice(0, 7);
   const monthX = gridX + week * pitch;
 
+  const weekProgress = WEEKS === 1 ? 0 : week / (WEEKS - 1);
+
   if (month !== previousMonth) {
     const label = new Intl.DateTimeFormat("en", {
       month: "short",
@@ -409,7 +462,13 @@ for (let week = 0; week < WEEKS; week++) {
     }).format(new Date(`${weekStart}T12:00:00Z`));
 
     if (monthX - lastMonthLabelX >= 34) {
-      text(monthX, gridY - 13, label, 'class="small"');
+      text(
+        monthX,
+        gridY - 13,
+        label,
+        'class="small"',
+        0.45 + weekProgress * 0.6,
+      );
 
       lastMonthLabelX = monthX;
     }
@@ -417,6 +476,8 @@ for (let week = 0; week < WEEKS; week++) {
     if (week > 0) {
       fragments.push(
         `<path
+          class="month-divider"
+          style="--delay:${(0.5 + weekProgress * 0.6).toFixed(3)}s"
           d="M ${monthX - 3} ${gridY - 3} V ${gridBottom + 3}"
           stroke="${TEXT_COLOR}"
           stroke-opacity=".13"
@@ -439,20 +500,26 @@ for (let week = 0; week < WEEKS; week++) {
     const y = gridY + row * pitch;
     const count = days[date];
 
+    const cellDelay = 0.4 + weekProgress * 0.85 + row * 0.035;
+
     if (count === undefined) {
       fragments.push(
-        `<rect
-          x="${x}"
-          y="${y}"
-          width="${cellSize}"
-          height="${cellSize}"
-          rx="${Math.min(3, cellSize / 4)}"
-          fill="none"
-          stroke="${TEXT_COLOR}"
-          stroke-opacity=".4"
-          stroke-dasharray="2 2">
-          <title>${date}: unavailable</title>
-        </rect>`,
+        `<g
+          class="cell-arrive"
+          style="--delay:${cellDelay.toFixed(3)}s">
+          <rect
+            x="${x}"
+            y="${y}"
+            width="${cellSize}"
+            height="${cellSize}"
+            rx="${Math.min(3, cellSize / 4)}"
+            fill="none"
+            stroke="${TEXT_COLOR}"
+            stroke-opacity=".4"
+            stroke-dasharray="2 2">
+            <title>${escape(date)}: unavailable</title>
+          </rect>
+        </g>`,
       );
 
       continue;
@@ -467,6 +534,7 @@ for (let week = 0; week < WEEKS; week++) {
         date === today ? "・today, incomplete" : ""
       }`,
       date === today,
+      cellDelay,
     );
   }
 }
@@ -476,13 +544,19 @@ for (let week = 0; week < WEEKS; week++) {
   ["Wed", 2],
   ["Fri", 4],
   ["Sun", 6],
-].forEach(([label, row]) => {
-  text(PADDING, gridY + row * pitch + cellSize - 2, label, 'class="small"');
+].forEach(([label, row], index) => {
+  text(
+    PADDING,
+    gridY + row * pitch + cellSize - 2,
+    label,
+    'class="small"',
+    0.4 + index * 0.1,
+  );
 });
 
-// Heatmap legend, directly beneath the grid
+// Heatmap legend, directly beneath the grid.
 
-text(legendX, legendY + 11, "Less", 'class="small"');
+text(legendX, legendY + 11, "Less", 'class="small"', 1.15);
 
 [0, 1, 3, 6, 10].forEach((value, index) => {
   const labels = {
@@ -499,20 +573,31 @@ text(legendX, legendY + 11, "Less", 'class="small"');
     legendSize,
     value,
     labels[value],
+    false,
+    1.15 + index * 0.065,
   );
 });
 
-text(legendX + 158, legendY + 11, "More", 'class="small"');
+text(legendX + 158, legendY + 11, "More", 'class="small"', 1.48);
 
-// Recent repositories: beside the calendar only when enough width exists.
+// Recent repositories.
 
-text(repositoryX, repositoryHeadingY, "Recent Repositories", 'class="heading"');
+const repositoryEntrance = repositoriesBeside ? 0.35 : 0.7;
+
+text(
+  repositoryX,
+  repositoryHeadingY,
+  "Recent Repositories",
+  'class="heading"',
+  repositoryEntrance,
+);
 
 text(
   repositoryX,
   repositoryHeadingY + 23,
   `Last ${PROJECT_DAYS} days`,
   'class="muted"',
+  repositoryEntrance + 0.28,
 );
 
 let cursor = repositoryHeadingY + 57;
@@ -527,6 +612,7 @@ const countWidth = Math.max(
 );
 
 const countGap = 18;
+
 const repositoryNameWidth = Math.max(
   30,
   repositoryWidth - countWidth - countGap,
@@ -535,8 +621,12 @@ const repositoryNameWidth = Math.max(
 projects.forEach((project, index) => {
   const clipId = `repository-name-${index}`;
 
+  const rowStart = repositoryEntrance + 0.5 + index * ROW_STAGGER;
+
   definitions.push(
-    `<clipPath id="${clipId}">
+    `<clipPath
+      id="${clipId}"
+      clipPathUnits="userSpaceOnUse">
       <rect
         x="${repositoryX}"
         y="${cursor - 19}"
@@ -552,9 +642,16 @@ projects.forEach((project, index) => {
     clipToWidth(project.nameWithOwner, repositoryNameWidth),
     `class="repo" clip-path="url(#${clipId})"`,
     project.nameWithOwner,
+    rowStart,
   );
 
-  text(repositoryRight, cursor, countLabels[index], 'text-anchor="end"');
+  text(
+    repositoryRight,
+    cursor,
+    countLabels[index],
+    'text-anchor="end"',
+    rowStart + 0.12,
+  );
 
   cursor += 32;
 });
@@ -567,12 +664,29 @@ if (projects.length === 0) {
       ? "No matching public commits in this period."
       : "No matching public repository commits in this period.",
     'class="muted"',
+    repositoryEntrance + 0.5,
   );
 
   cursor += 32;
 }
 
 const height = Math.max(legendBottom + PADDING, cursor + 8);
+
+const typingStyle = `
+  text {
+    white-space: pre;
+  }
+
+  .typing-character {
+    white-space: pre;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typing-character {
+      visibility: visible !important;
+    }
+  }
+`;
 
 const style = `
   text {
@@ -602,20 +716,55 @@ const style = `
     fill-opacity: .85;
   }
 
-  .content {
-    animation: appear 1.3s ease-out both;
+  .cell-arrive {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation:
+      cell-arrive .55s
+      cubic-bezier(.22, 1, .36, 1)
+      var(--delay, 0s)
+      both;
   }
 
-  @keyframes appear {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .month-divider {
+    animation:
+      reveal-divider .7s
+      ease-out
+      var(--delay, 0s)
+      both;
+  }
+
+  @keyframes cell-arrive {
+    from {
+      opacity: 0;
+      transform: scale(.82);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes reveal-divider {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .content {
+    .cell-arrive,
+    .month-divider {
       animation: none;
+      transform: none;
     }
   }
+
+  ${typingStyle}
 `;
 
 const recentSvg = `<svg xmlns="http://www.w3.org/2000/svg"
@@ -623,24 +772,29 @@ const recentSvg = `<svg xmlns="http://www.w3.org/2000/svg"
   height="${height}"
   viewBox="0 0 ${WIDTH} ${height}"
   role="img"
-  aria-labelledby="title description">
-  <title id="title">Recent GitHub activity</title>
-  <desc id="description">
+  aria-labelledby="recent-title recent-description">
+
+  <title id="recent-title">Recent GitHub activity</title>
+
+  <desc id="recent-description">
     A ${WEEKS}-week contribution heatmap and recent public
     repositories with exact counts of your commits in their current
     default-branch histories over the last ${PROJECT_DAYS} days.
     Today is incomplete. Calendar dates follow GitHub contribution buckets.
   </desc>
+
   <defs>
     ${definitions.join("\n")}
   </defs>
+
   <style>${style}</style>
+
   <g class="content">
     ${fragments.join("\n")}
   </g>
 </svg>`;
 
-// Separate generation timestamp
+// Separate generation timestamp.
 
 const stampDate = new Intl.DateTimeFormat("de-DE", {
   timeZone: TIMEZONE,
@@ -679,41 +833,48 @@ const updatedSvg = `<svg xmlns="http://www.w3.org/2000/svg"
   height="75"
   viewBox="0 0 ${WIDTH} 75"
   role="img"
-  aria-labelledby="title">
-  <title id="title">
-    Last updated: ${escape(stampValue)}・${TIMEZONE}
-  </title>
+  aria-labelledby="updated-title">
+
+  <title id="updated-title">Last updated: ${escape(
+    stampValue,
+  )}・${escape(TIMEZONE)}</title>
+
   <style>
     text {
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       text-anchor: middle;
       font-weight: 400;
     }
+
+    ${typingStyle}
   </style>
-  <text
-    x="${WIDTH / 2}"
-    y="23"
-    fill="${TITLE_COLOR}"
-    font-size="15">
-    Last updated
-  </text>
-  <text
-    x="${WIDTH / 2}"
-    y="47"
-    fill="${TEXT_COLOR}"
-    font-size="15">
-    ${escape(stampValue)}
-  </text>
-  <text
-    x="${WIDTH / 2}"
-    y="65"
-    fill="${TEXT_COLOR}"
-    font-size="11">
-    ${TIMEZONE}
-  </text>
+
+  ${textMarkup(
+    WIDTH / 2,
+    23,
+    "Last updated",
+    `fill="${TITLE_COLOR}" font-size="15"`,
+    0.2,
+  )}
+
+  ${textMarkup(
+    WIDTH / 2,
+    47,
+    stampValue,
+    `fill="${TEXT_COLOR}" font-size="15"`,
+    0.48,
+  )}
+
+  ${textMarkup(
+    WIDTH / 2,
+    65,
+    TIMEZONE,
+    `fill="${TEXT_COLOR}" font-size="11"`,
+    0.76,
+  )}
 </svg>`;
 
-// Write generated files
+// Write generated files.
 
 await fs.mkdir(OUTPUT, { recursive: true });
 
@@ -722,9 +883,10 @@ for (const [filename, contents] of [
   ["updated.svg", updatedSvg],
 ]) {
   const destination = path.join(OUTPUT, filename);
+  const temporary = `${destination}.tmp`;
 
-  await fs.writeFile(`${destination}.tmp`, contents);
-  await fs.rename(`${destination}.tmp`, destination);
+  await fs.writeFile(temporary, contents, "utf8");
+  await fs.rename(temporary, destination);
 
   console.log(`Generated data/stats/${filename}`);
 }

@@ -5,7 +5,7 @@
     "scripts": {
       "generate:stats": "bash scripts/stats.sh",
       "generate:recent": "node scripts/recent.mjs",
-      "optimize:stats": "svgo --config scripts/svgo.config.mjs --folder data/stats --output data/stats",
+      "optimize:stats": "svgo --config scripts/svgo.config.mjs --folder data --recursive --output data",
       "generate:profile": "pnpm generate:stats && pnpm generate:recent && pnpm optimize:stats"
     },
     "devDependencies": {
