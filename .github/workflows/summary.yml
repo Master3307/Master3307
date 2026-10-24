@@ -6,7 +6,7 @@ on:
     branches:
       - "**"
     paths-ignore:
-      - "data/stats/*.svg"
+      - "data/**"
   schedule:
     # Every 6 hours, at minute 17 UTC.
     - cron: "17 */6 * * *"
@@ -78,7 +78,7 @@ jobs:
       - name: Optimize generated SVGs
         run: pnpm optimize:stats
 
-      - name: Validate optimized SVGs
+      - name: Validate all optimized SVGs
         run: |
           set -euo pipefail
 
@@ -86,7 +86,7 @@ jobs:
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
-          directory = Path("data/stats")
+          directory = Path("data")
 
           expected = (
               "profile.svg",
@@ -99,19 +99,40 @@ jobs:
               "updated.svg",
           )
 
+          # Ensure the dynamically generated cards all exist.
           for filename in expected:
-              path = directory / filename
+              path = directory / "stats" / filename
 
-              if not path.is_file() or path.stat().st_size == 0:
-                  raise SystemExit(f"Missing or empty SVG: {path}")
+              if not path.is_file():
+                  raise SystemExit(
+                      f"Missing expected generated SVG: {path}"
+                  )
+
+          # Validate every SVG under data/ and its subfolders.
+          paths = sorted(
+              path
+              for path in directory.rglob("*")
+              if path.is_file() and path.suffix.lower() == ".svg"
+          )
+
+          if not paths:
+              raise SystemExit("No SVG files found under data/.")
+
+          for path in paths:
+              if path.stat().st_size == 0:
+                  raise SystemExit(f"Empty SVG: {path}")
 
               try:
                   root = ET.parse(path).getroot()
               except ET.ParseError as exc:
-                  raise SystemExit(f"Invalid XML in {path}: {exc}") from exc
+                  raise SystemExit(
+                      f"Invalid XML in {path}: {exc}"
+                  ) from exc
 
-              if root.tag.split("}")[-1] != "svg":
-                  raise SystemExit(f"Invalid SVG root element: {path}")
+              if root.tag != "{http://www.w3.org/2000/svg}svg":
+                  raise SystemExit(
+                      f"Invalid SVG root element: {path}"
+                  )
 
               for element in root.iter():
                   if element.tag.split("}")[-1].lower() == "script":
@@ -120,29 +141,29 @@ jobs:
                       )
 
               print(f"Validated {path}")
+
+          print(f"Validated {len(paths)} SVG files.")
           PY
 
-      - name: Stage generated assets and check for changes
+      - name: Stage data assets and check for changes
         id: changes
         run: |
           set -euo pipefail
 
-          # Stage only the assets validated above.
-          git add -- \
-            data/stats/profile.svg \
-            data/stats/repos.svg \
-            data/stats/commits.svg \
-            data/stats/stats.svg \
-            data/stats/time.svg \
-            data/stats/wakatime.svg \
-            data/stats/recent.svg \
-            data/stats/updated.svg
+          echo "Working-tree changes before staging:"
+          git status --short -- data/
+
+          # Include new, modified, and deleted files under data/.
+          # Changes outside data/ are not staged.
+          git add -A -- data/
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No changes to commit."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
+
+            echo "Staged changes:"
             git diff --cached --stat
           fi
 
