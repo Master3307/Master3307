@@ -1,0 +1,22 @@
+allowBuilds:
+  esbuild: true
+
+overrides:
+  "@opentelemetry/api": "1.9.0"
+
+  "@actions/github@6.0.1>undici": "6.28.1"
+  "@actions/http-client@2.2.3>undici": "6.28.1"
+
+  "@vercel/cli-config@0.3.3>zod": "4.6.6"
+
+  "jsdom@16.7.0>http-proxy-agent": "5.0.0"
+  "http-proxy-agent@5.0.0>@tootallnate/once": "2.0.1"
+
+patchedDependencies:
+  d3-color@2.0.0: patches/d3-color@2.0.0.patch
+
+auditConfig:
+  ignoreGhsas:
+    # Backported the upstream numeric-regex fix into d3-color@2.0.0.
+    # Patch covers source and both distributed bundles.
+    - GHSA-36jr-mh4h-2g58

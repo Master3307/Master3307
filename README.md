@@ -71,11 +71,28 @@ Feel free to explore some of my repositories. :3
 <details>
 <summary><strong>📊 Stats</strong></summary>
 
-![Master3307 (MrKoby07)](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
-![Top Languages by Repo](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
-![Top Languages by Commit](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
-![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
-![Commits (UTC+2.00)](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Master3307&theme=zenburn&animation=stagger&duration=1.3&utcOffset=2&title_color=dc8add&text_color=8e58d4&bg_color=0d1117&border_color=0d1117&icon_color=8e58d4&chart_color=dc8add)
+<p align="center">
+  <a href="https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc">
+    <img src="./data/stats/wakatime.svg" alt="WakaTime coding time tracked since Apr 11, 2025" />
+  </a>
+</p>
 
-<a href="https://wakatime.com/@229ef515-6448-4da4-8301-8209d6e208dc"><img src="https://wakatime.com/badge/user/229ef515-6448-4da4-8301-8209d6e208dc.svg" alt="Total time coded since Apr 11 2025"  /></a>
+<p align="center">
+  <img src="./data/stats/profile.svg" alt="Master3307 (MrKoby07)" />
+  <br />
+  <img src="./data/stats/repos.svg" alt="Top Languages by Repo" />
+  <img src="./data/stats/commits.svg" alt="Top Languages by Commit" />
+  <br />
+  <img src="./data/stats/stats.svg" alt="Stats" />
+  <img src="./data/stats/time.svg" alt="Commits (UTC+2.00)" />
+</p>
+
+<p align="center">
+  <img src="./data/stats/recent.svg" alt="Recent GitHub contributions, WakaTime coding activity, and public projects" />
+</p>
+
+<p align="center">
+  <img src="./data/stats/updated.svg" alt="Last profile generation date and time in Europe/Berlin" />
+</p>
+
 </details>

@@ -1,0 +1,14 @@
+{
+    "name": "mrkoby07-profile",
+    "private": true,
+    "packageManager": "pnpm@12.15.0",
+    "scripts": {
+    "generate:stats": "bash scripts/stats.sh",
+    "generate:recent": "node scripts/recent.mjs",
+    "generate:profile": "pnpm generate:stats && pnpm generate:recent"
+    },
+    "devDependencies": {
+        "github-profile-summary-cards": "github:vn7n24fzkq/github-profile-summary-cards#release",
+        "tsx": "4.19.4"
+    }
+}

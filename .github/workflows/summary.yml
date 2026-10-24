@@ -1,0 +1,159 @@
+name: Generate Stats
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+    paths-ignore:
+      - "data/stats/*.svg"
+  schedule:
+    # Every 6 hours, at minute 17 UTC.
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-summary-cards
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  generate:
+    # Only generate assets from the default branch, including for manual runs.
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Check required secret
+        env:
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${GITHUB_TOKEN:-}" ]]; then
+            echo "::error::Missing SUMMARY_GITHUB_TOKEN repository secret."
+            exit 1
+          fi
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies and apply patches
+        run: pnpm install --frozen-lockfile
+
+      - name: Check peer dependencies
+        run: pnpm peers check
+
+      - name: Generate profile cards, recent activity, and timestamp
+        run: pnpm generate:profile
+        env:
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
+
+      - name: Validate generated SVGs
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          directory = Path("data/stats")
+
+          expected = (
+              "profile.svg",
+              "repos.svg",
+              "commits.svg",
+              "stats.svg",
+              "time.svg",
+              "wakatime.svg",
+              "recent.svg",
+              "updated.svg",
+          )
+
+          for filename in expected:
+              path = directory / filename
+
+              if not path.is_file() or path.stat().st_size == 0:
+                  raise SystemExit(f"Missing or empty SVG: {path}")
+
+              try:
+                  root = ET.parse(path).getroot()
+              except ET.ParseError as exc:
+                  raise SystemExit(f"Invalid XML in {path}: {exc}") from exc
+
+              if root.tag.split("}")[-1] != "svg":
+                  raise SystemExit(f"Invalid SVG root element: {path}")
+
+              for element in root.iter():
+                  if element.tag.split("}")[-1].lower() == "script":
+                      raise SystemExit(
+                          f"Unexpected script element in SVG: {path}"
+                      )
+
+              print(f"Validated {path}")
+          PY
+
+      - name: Commit updated profile assets
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage only the assets validated above.
+          git add -- \
+            data/stats/profile.svg \
+            data/stats/repos.svg \
+            data/stats/commits.svg \
+            data/stats/stats.svg \
+            data/stats/time.svg \
+            data/stats/wakatime.svg \
+            data/stats/recent.svg \
+            data/stats/updated.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          case "$EVENT_NAME" in
+            workflow_dispatch)
+              commit_message="chore(stats):  manual update"
+              ;;
+            schedule|push)
+              commit_message="chore(stats):  automatic update"
+              ;;
+            *)
+              echo "::error::Unsupported event: $EVENT_NAME"
+              exit 1
+              ;;
+          esac
+
+          git commit -m "$commit_message"
+
+          git push origin "HEAD:refs/heads/${DEFAULT_BRANCH}"
