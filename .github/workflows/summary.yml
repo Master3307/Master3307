@@ -65,15 +65,20 @@ jobs:
       - name: Check peer dependencies
         run: pnpm peers check
 
-      - name: Generate profile cards, recent activity, and timestamp
-        run: pnpm generate:profile
+      - name: Generate GitHub and WakaTime cards
+        run: pnpm generate:stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
+
+      - name: Generate recent activity and update timestamp
+        run: pnpm generate:recent
         env:
           GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
 
       - name: Optimize generated SVGs
         run: pnpm optimize:stats
 
-      - name: Validate generated SVGs
+      - name: Validate optimized SVGs
         run: |
           set -euo pipefail
 
@@ -117,16 +122,10 @@ jobs:
               print(f"Validated {path}")
           PY
 
-      - name: Commit updated profile assets
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      - name: Stage generated assets and check for changes
+        id: changes
         run: |
           set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Stage only the assets validated above.
           git add -- \
@@ -140,9 +139,28 @@ jobs:
             data/stats/updated.svg
 
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No changes to commit."
-            exit 0
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --cached --stat
           fi
+
+      - name: Configure Git author
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit updated stats
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
 
           case "$EVENT_NAME" in
             workflow_dispatch)
@@ -157,6 +175,14 @@ jobs:
               ;;
           esac
 
-          git commit -m "$commit_message"
+          # Preserve the exact spacing in the requested commit message.
+          git -c commit.cleanup=verbatim commit -m "$commit_message"
+
+      - name: Push updated stats
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
 
           git push origin "HEAD:refs/heads/${DEFAULT_BRANCH}"

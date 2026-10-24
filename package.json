@@ -3,14 +3,14 @@
     "private": true,
     "packageManager": "pnpm@12.15.0",
     "scripts": {
-        "generate:stats": "bash scripts/stats.sh",
-        "generate:recent": "node scripts/recent.mjs",
-        "optimize:stats": "svgo --config scripts/svgo.config.mjs --folder data/stats --output data/stats",
-        "generate:profile": "pnpm generate:stats && pnpm generate:recent && pnpm optimize:stats"
-      },
+      "generate:stats": "bash scripts/stats.sh",
+      "generate:recent": "node scripts/recent.mjs",
+      "optimize:stats": "svgo --config scripts/svgo.config.mjs --folder data/stats --output data/stats",
+      "generate:profile": "pnpm generate:stats && pnpm generate:recent && pnpm optimize:stats"
+    },
     "devDependencies": {
-        "github-profile-summary-cards": "github:vn7n24fzkq/github-profile-summary-cards#release",
-        "svgo": "^4.1.0",
-        "tsx": "4.19.4"
+      "github-profile-summary-cards": "github:vn7n24fzkq/github-profile-summary-cards#release",
+      "svgo": "^4.1.0",
+      "tsx": "4.19.4"
     }
-}
+  }
