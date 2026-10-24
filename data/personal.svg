@@ -31,10 +31,19 @@
   </defs>
 
   <style>
+    .row {
+      --delay: 0s;
+    }
+
+    .row-2 { --delay: .22s; }
+    .row-3 { --delay: .44s; }
+    .row-4 { --delay: .66s; }
+
     text {
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       font-weight: 400;
       fill: #8e58d4;
+      white-space: pre;
     }
 
     .label {
@@ -55,54 +64,75 @@
       stroke-linejoin: round;
     }
 
+    .icon .draw {
+      stroke-dasharray: 1;
+      animation: draw-icon 1.1s cubic-bezier(.45, 0, .25, 1) both;
+      animation-delay: var(--delay);
+    }
+
+    .icon .detail {
+      animation-delay: calc(var(--delay) + .18s);
+    }
+
     .icon-pulse {
       animation: breathe 6s ease-in-out infinite;
-    }
-
-    .pulse-2 {
-      animation-delay: -1.5s;
-    }
-
-    .pulse-3 {
-      animation-delay: -3s;
-    }
-
-    .pulse-4 {
-      animation-delay: -4.5s;
+      animation-delay: calc(var(--delay) + 1.4s);
     }
 
     .divider {
       fill: none;
       stroke: #8e58d4;
       stroke-opacity: .16;
+      stroke-dasharray: 1;
+      animation: draw-divider 1s cubic-bezier(.65, 0, .35, 1) both;
+      animation-delay: calc(var(--delay) + .5s);
     }
 
     .shimmer {
       fill: url(#divider-shimmer);
       animation: sweep 12s linear infinite;
+      animation-delay: 2.8s;
       opacity: 0;
     }
 
     .shimmer-2 {
-      animation-delay: -4s;
+      animation-delay: 6.8s;
     }
 
     .shimmer-3 {
-      animation-delay: -8s;
+      animation-delay: 10.8s;
     }
 
-    .content {
-      animation: appear 1.3s ease-out both;
+    @keyframes draw-icon {
+      from {
+        stroke-dashoffset: 1;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
     }
 
-    @keyframes appear {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes draw-divider {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
     }
 
     @keyframes breathe {
-      0%, 100% { opacity: .65; }
-      50% { opacity: 1; }
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .65;
+      }
     }
 
     @keyframes sweep {
@@ -110,10 +140,7 @@
         transform: translateX(0);
         opacity: 0;
       }
-      12% {
-        opacity: .4;
-      }
-      76% {
+      12%, 76% {
         opacity: .4;
       }
       90%, 100% {
@@ -123,9 +150,19 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .content,
-      .icon-pulse {
+      text tspan {
+        visibility: visible !important;
+      }
+
+      .icon .draw,
+      .icon-pulse,
+      .divider {
         animation: none;
+      }
+
+      .icon .draw,
+      .divider {
+        stroke-dasharray: none;
       }
 
       .shimmer {
@@ -135,107 +172,172 @@
     }
   </style>
 
-  <g class="content">
-    <!-- Name: person -->
+  <!-- Name: person -->
+  <g class="row">
     <g class="icon"
       transform="translate(26 23)"
       aria-hidden="true">
+
       <g class="icon-pulse">
-        <circle cx="14" cy="8" r="5"/>
-        <path d="M4 26v-3a10 10 0 0 1 20 0v3"/>
+        <circle
+          class="draw"
+          pathLength="1"
+          cx="14"
+          cy="8"
+          r="5"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M4 26v-3a10 10 0 0 1 20 0v3"/>
       </g>
     </g>
 
-    <text x="72" y="34" class="label">Name</text>
-    <text x="72" y="55" class="value">Korbinian</text>
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>N<set attributeName="visibility" to="hidden" begin="0s" dur=".200s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".235s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur=".270s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".305s"/></tspan></text>
 
-    <path d="M72 68H824" class="divider"/>
+    <text x="72" y="55" class="value" xml:space="preserve"><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".415s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".450s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur=".485s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur=".520s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".555s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur=".590s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".625s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".660s"/></tspan></text>
 
-    <!-- Birthday: calendar -->
+    <path
+      class="divider"
+      pathLength="1"
+      d="M72 68H824"/>
+  </g>
+
+  <!-- Birthday: calendar -->
+  <g class="row row-2">
     <g class="icon"
       transform="translate(26 77)"
       aria-hidden="true">
-      <g class="icon-pulse pulse-2">
-        <rect x="2" y="5" width="24" height="21" rx="3"/>
-        <path d="
-          M8 2v6
-          M20 2v6
-          M2 12h24
-          M8 17h2
-          M14 17h2
-          M20 17h1
-          M8 22h2
-          M14 22h2
-        "/>
+
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="2"
+          y="5"
+          width="24"
+          height="21"
+          rx="3"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M8 2v6 M20 2v6 M2 12h24"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="
+            M8 17h2
+            M14 17h2
+            M20 17h1
+            M8 22h2
+            M14 22h2
+          "/>
       </g>
     </g>
 
-    <text x="72" y="88" class="label">Birthday</text>
-    <text x="72" y="109" class="value">09.09.</text>
+    <text x="72" y="88" class="label" xml:space="preserve"><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur=".420s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur=".455s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".490s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".525s"/></tspan><tspan>h<set attributeName="visibility" to="hidden" begin="0s" dur=".560s"/></tspan><tspan>d<set attributeName="visibility" to="hidden" begin="0s" dur=".595s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".630s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur=".665s"/></tspan></text>
 
-    <path d="M72 122H824" class="divider"/>
+    <text x="72" y="109" class="value" xml:space="preserve"><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur=".740s"/></tspan><tspan>9<set attributeName="visibility" to="hidden" begin="0s" dur=".775s"/></tspan><tspan>.<set attributeName="visibility" to="hidden" begin="0s" dur=".810s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur=".845s"/></tspan><tspan>9<set attributeName="visibility" to="hidden" begin="0s" dur=".880s"/></tspan><tspan>.<set attributeName="visibility" to="hidden" begin="0s" dur=".915s"/></tspan></text>
 
-    <!-- Location: map pin -->
+    <path
+      class="divider"
+      pathLength="1"
+      d="M72 122H824"/>
+  </g>
+
+  <!-- Location: map pin -->
+  <g class="row row-3">
     <g class="icon"
       transform="translate(26 131)"
       aria-hidden="true">
-      <g class="icon-pulse pulse-3">
-        <path d="
-          M14 27
-          C11 23 4 16 4 11
-          a10 10 0 0 1 20 0
-          c0 5-7 12-10 16Z
-        "/>
-        <circle cx="14" cy="11" r="3.5"/>
+
+      <g class="icon-pulse">
+        <path
+          class="draw"
+          pathLength="1"
+          d="
+            M14 27
+            C11 23 4 16 4 11
+            a10 10 0 0 1 20 0
+            c0 5-7 12-10 16Z
+          "/>
+
+        <circle
+          class="draw detail"
+          pathLength="1"
+          cx="14"
+          cy="11"
+          r="3.5"/>
       </g>
     </g>
 
-    <text x="72" y="142" class="label">Location</text>
-    <text x="72" y="163" class="value">Germany, Bavaria</text>
+    <text x="72" y="142" class="label" xml:space="preserve"><tspan>L<set attributeName="visibility" to="hidden" begin="0s" dur=".640s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".675s"/></tspan><tspan>c<set attributeName="visibility" to="hidden" begin="0s" dur=".710s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".745s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".780s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur=".815s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".850s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".885s"/></tspan></text>
 
-    <path d="M72 176H824" class="divider"/>
+    <text x="72" y="163" class="value" xml:space="preserve"><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur=".960s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".995s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.030s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur="1.065s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.100s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.135s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.170s"/></tspan><tspan>,<set attributeName="visibility" to="hidden" begin="0s" dur="1.205s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.240s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.275s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.310s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur="1.345s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.380s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.415s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.450s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.485s"/></tspan></text>
 
-    <!-- Languages: globe -->
+    <path
+      class="divider"
+      pathLength="1"
+      d="M72 176H824"/>
+  </g>
+
+  <!-- Languages: globe -->
+  <g class="row row-4">
     <g class="icon"
       transform="translate(26 185)"
       aria-hidden="true">
-      <g class="icon-pulse pulse-4">
-        <circle cx="14" cy="14" r="12"/>
-        <ellipse cx="14" cy="14" rx="5" ry="12"/>
-        <path d="M2 14h24 M4 7h20 M4 21h20"/>
+
+      <g class="icon-pulse">
+        <circle
+          class="draw"
+          pathLength="1"
+          cx="14"
+          cy="14"
+          r="12"/>
+
+        <ellipse
+          class="draw detail"
+          pathLength="1"
+          cx="14"
+          cy="14"
+          rx="5"
+          ry="12"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M2 14h24 M4 7h20 M4 21h20"/>
       </g>
     </g>
 
-    <text x="72" y="196" class="label">Languages</text>
-    <text x="72" y="217" class="value">
-      German (native), English (fluent)
-    </text>
+    <text x="72" y="196" class="label" xml:space="preserve"><tspan>L<set attributeName="visibility" to="hidden" begin="0s" dur=".860s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".895s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".930s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur=".965s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur="1.000s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.035s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur="1.070s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.105s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.140s"/></tspan></text>
 
-    <!-- Subtle moving highlights along the divider lines. -->
-    <g clip-path="url(#divider-clip)" aria-hidden="true">
-      <rect
-        class="shimmer"
-        x="-100"
-        y="67.3"
-        width="100"
-        height="1.4"
-      />
+    <text x="72" y="217" class="value" xml:space="preserve"><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur="1.215s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.250s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.285s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur="1.320s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.355s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.390s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.425s"/></tspan><tspan>(<set attributeName="visibility" to="hidden" begin="0s" dur="1.460s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.495s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.530s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.565s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.600s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur="1.635s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.670s"/></tspan><tspan>)<set attributeName="visibility" to="hidden" begin="0s" dur="1.705s"/></tspan><tspan>,<set attributeName="visibility" to="hidden" begin="0s" dur="1.740s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.775s"/></tspan><tspan>E<set attributeName="visibility" to="hidden" begin="0s" dur="1.810s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.845s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur="1.880s"/></tspan><tspan>l<set attributeName="visibility" to="hidden" begin="0s" dur="1.915s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.950s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.985s"/></tspan><tspan>h<set attributeName="visibility" to="hidden" begin="0s" dur="2.020s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.055s"/></tspan><tspan>(<set attributeName="visibility" to="hidden" begin="0s" dur="2.090s"/></tspan><tspan>f<set attributeName="visibility" to="hidden" begin="0s" dur="2.125s"/></tspan><tspan>l<set attributeName="visibility" to="hidden" begin="0s" dur="2.160s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur="2.195s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="2.230s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="2.265s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="2.300s"/></tspan><tspan>)<set attributeName="visibility" to="hidden" begin="0s" dur="2.335s"/></tspan></text>
+  </g>
 
-      <rect
-        class="shimmer shimmer-2"
-        x="-100"
-        y="121.3"
-        width="100"
-        height="1.4"
-      />
+  <!-- Subtle continuous shimmer after the entrance finishes. -->
+  <g clip-path="url(#divider-clip)" aria-hidden="true">
+    <rect
+      class="shimmer"
+      x="-100"
+      y="67.3"
+      width="100"
+      height="1.4"/>
 
-      <rect
-        class="shimmer shimmer-3"
-        x="-100"
-        y="175.3"
-        width="100"
-        height="1.4"
-      />
-    </g>
+    <rect
+      class="shimmer shimmer-2"
+      x="-100"
+      y="121.3"
+      width="100"
+      height="1.4"/>
+
+    <rect
+      class="shimmer shimmer-3"
+      x="-100"
+      y="175.3"
+      width="100"
+      height="1.4"/>
   </g>
 </svg>

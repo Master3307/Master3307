@@ -27,6 +27,7 @@
       font-size: 14px;
       font-weight: 400;
       fill: #8e58d4;
+      white-space: pre;
     }
 
     .icon {
@@ -37,40 +38,63 @@
       stroke-linejoin: round;
     }
 
+    .draw {
+      stroke-dasharray: 1;
+      animation: draw-icon 1.1s cubic-bezier(.45, 0, .25, 1) both;
+    }
+
+    .detail {
+      animation-delay: .18s;
+    }
+
+    .draw-link {
+      animation-delay: .25s;
+    }
+
     .icon-pulse {
-      animation: breathe 6s ease-in-out infinite;
-      animation-delay: -2s;
+      animation: breathe 6s ease-in-out 1.4s infinite;
     }
 
     .pulse-link {
-      animation-delay: -5s;
+      animation-delay: 1.65s;
     }
 
     .divider {
       fill: none;
       stroke: #8e58d4;
       stroke-opacity: .16;
+      stroke-dasharray: 1;
+      animation: draw-divider 1s cubic-bezier(.65, 0, .35, 1) .5s both;
     }
 
     .shimmer {
       fill: url(#divider-shimmer);
-      animation: sweep 12s linear infinite;
-      animation-delay: -4s;
+      animation: sweep 12s linear 1.8s infinite;
       opacity: 0;
     }
 
-    .content {
-      animation: appear 1.3s ease-out both;
+    @keyframes draw-icon {
+      from {
+        stroke-dashoffset: 1;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
     }
 
-    @keyframes appear {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes draw-divider {
+      from { stroke-dashoffset: 1; }
+      to { stroke-dashoffset: 0; }
     }
 
     @keyframes breathe {
-      0%, 100% { opacity: .65; }
-      50% { opacity: 1; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: .65; }
     }
 
     @keyframes sweep {
@@ -78,10 +102,7 @@
         transform: translateX(0);
         opacity: 0;
       }
-      12% {
-        opacity: .4;
-      }
-      76% {
+      12%, 76% {
         opacity: .4;
       }
       90%, 100% {
@@ -91,9 +112,19 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .content,
-      .icon-pulse {
+      text tspan {
+        visibility: visible !important;
+      }
+
+      .draw,
+      .icon-pulse,
+      .divider {
         animation: none;
+      }
+
+      .draw,
+      .divider {
+        stroke-dasharray: none;
       }
 
       .shimmer {
@@ -103,46 +134,64 @@
     }
   </style>
 
-  <g class="content">
-    <g class="icon"
-      transform="translate(26 12)"
-      aria-hidden="true">
-      <g class="icon-pulse">
-        <rect x="1" y="4" width="26" height="21" rx="3"/>
-        <circle cx="9" cy="11" r="3"/>
-        <path d="
+  <g class="icon"
+    transform="translate(26 12)"
+    aria-hidden="true">
+    <g class="icon-pulse">
+      <rect
+        class="draw"
+        pathLength="1"
+        x="1"
+        y="4"
+        width="26"
+        height="21"
+        rx="3"/>
+
+      <circle
+        class="draw detail"
+        pathLength="1"
+        cx="9"
+        cy="11"
+        r="3"/>
+
+      <path
+        class="draw detail"
+        pathLength="1"
+        d="
           M4 21v-1a5 5 0 0 1 10 0v1
           M18 10h5
           M18 15h5
-          M18 20h3
-        "/>
-      </g>
+          M18 20h3"/>
     </g>
+  </g>
 
-    <text x="72" y="31">Usercard</text>
+  <text x="72" y="31" xml:space="preserve"><tspan>U<set attributeName="visibility" to="hidden" begin="0s" dur=".200s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".235s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".270s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".305s"/></tspan><tspan>c<set attributeName="visibility" to="hidden" begin="0s" dur=".340s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".375s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".410s"/></tspan><tspan>d<set attributeName="visibility" to="hidden" begin="0s" dur=".445s"/></tspan></text>
 
-    <g class="icon"
-      transform="translate(800 18)"
-      aria-hidden="true">
-      <g class="icon-pulse pulse-link">
-        <path d="
+  <g class="icon"
+    transform="translate(800 18)"
+    aria-hidden="true">
+    <g class="icon-pulse pulse-link">
+      <path
+        class="draw draw-link"
+        pathLength="1"
+        d="
           M8 2h10v10
           M18 2 7 13
-          M5 5H2v16h16v-3
-        "/>
-      </g>
+          M5 5H2v16h16v-3"/>
     </g>
+  </g>
 
-    <path d="M72 50H824" class="divider"/>
+  <path
+    class="divider"
+    pathLength="1"
+    d="M72 50H824"/>
 
-    <g clip-path="url(#divider-clip)" aria-hidden="true">
-      <rect
-        class="shimmer"
-        x="-100"
-        y="49.3"
-        width="100"
-        height="1.4"
-      />
-    </g>
+  <g clip-path="url(#divider-clip)" aria-hidden="true">
+    <rect
+      class="shimmer"
+      x="-100"
+      y="49.3"
+      width="100"
+      height="1.4"/>
   </g>
 </svg>

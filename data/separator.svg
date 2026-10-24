@@ -32,6 +32,24 @@
         fill="url(#wave-fade)"/>
     </mask>
 
+    <clipPath id="back-reveal" clipPathUnits="userSpaceOnUse">
+      <rect
+        class="reveal reveal-back"
+        x="72"
+        y="6"
+        width="576"
+        height="36"/>
+    </clipPath>
+
+    <clipPath id="front-reveal" clipPathUnits="userSpaceOnUse">
+      <rect
+        class="reveal reveal-front"
+        x="72"
+        y="6"
+        width="576"
+        height="36"/>
+    </clipPath>
+
     <path
       id="wave-pattern"
       d="
@@ -52,8 +70,17 @@
   </defs>
 
   <style>
-    .separator {
-      animation: appear 1.8s ease-out both;
+    .reveal {
+      transform-origin: 360px 24px;
+      animation: unfold 1.3s cubic-bezier(.65, 0, .35, 1) both;
+    }
+
+    .reveal-back {
+      animation-delay: .1s;
+    }
+
+    .reveal-front {
+      animation-delay: .35s;
     }
 
     .wave {
@@ -76,9 +103,9 @@
       animation: flow-left 7s linear infinite;
     }
 
-    @keyframes appear {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes unfold {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
     }
 
     @keyframes flow-left {
@@ -92,7 +119,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .separator,
+      .reveal,
       .wave-back,
       .wave-front {
         animation: none;
@@ -103,15 +130,17 @@
       }
     }
   </style>
-
-  <g class="separator">
-    <g mask="url(#wave-mask)">
+  
+  <g mask="url(#wave-mask)">
+    <g clip-path="url(#back-reveal)">
       <g transform="translate(0 6) scale(1 .75)">
         <use
           href="#wave-pattern"
           class="wave wave-back"/>
       </g>
+    </g>
 
+    <g clip-path="url(#front-reveal)">
       <use
         href="#wave-pattern"
         class="wave wave-front"/>

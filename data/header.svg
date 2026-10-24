@@ -29,6 +29,7 @@
         type="translate"
         values="-1 0; 1 0; 1 0"
         keyTimes="0; 0.65; 1"
+        begin="1.8s"
         dur="4.5s"
         repeatCount="indefinite"/>
     </linearGradient>
@@ -62,14 +63,18 @@
 
     <path
       id="separator-track"
+      pathLength="1"
       d="M16 84 H312 L324 78 H348
          L360 84 L372 78 H396 L408 84 H704"/>
 
     <mask
       id="track-mask"
       maskUnits="userSpaceOnUse"
-      x="12" y="70"
-      width="696" height="24">
+      x="12"
+      y="70"
+      width="696"
+      height="24">
+
       <use
         href="#separator-track"
         fill="none"
@@ -86,8 +91,32 @@
       font-size: 30px;
       font-weight: 400;
       fill: #e6def2;
+      white-space: pre;
+    }
+
+    .greeting-left {
+      text-anchor: end;
+    }
+
+    .greeting-right {
+      text-anchor: start;
+    }
+
+    .animated-heading {
+      animation: settle 1.5s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .hand {
       text-anchor: middle;
-      animation: appear 1.3s ease-out both;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji",
+                   "Noto Color Emoji", sans-serif;
+    }
+
+    /* Pivot at the bottom of the hand, near the wrist. */
+    .waving-hand {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: gentle-wave 5.6s ease-in-out .480s infinite both;
     }
 
     .name {
@@ -95,17 +124,89 @@
       fill: url(#name-shine);
     }
 
-    .separator {
-      animation: appear 1.8s ease-out both;
+    .static-heading {
+      display: none;
+    }
+
+    .line {
+      fill: none;
+      stroke: url(#separator-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1 1;
+      animation: draw-line 1.2s cubic-bezier(.65, 0, .35, 1) .65s both;
+    }
+
+    .line-glow {
+      stroke-width: 6;
+      opacity: .08;
+    }
+
+    .line-front {
+      stroke-width: 1.4;
     }
 
     .comet {
-      animation: sweep 6s linear infinite;
+      opacity: 0;
+      animation: sweep 6s linear 2.1s infinite;
     }
 
-    @keyframes appear {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .star {
+      animation: star-arrive .65s cubic-bezier(.34, 1.56, .64, 1) 1.4s both;
+    }
+
+    @keyframes settle {
+      0% {
+        transform: translateY(9px);
+      }
+      70% {
+        transform: translateY(-1px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Small side-to-side wrist motion, followed by a short rest. */
+    @keyframes gentle-wave {
+      0% {
+        transform: rotate(0deg);
+      }
+      15% {
+        transform: rotate(4deg);
+      }
+      35% {
+        transform: rotate(-4deg);
+      }
+      55% {
+        transform: rotate(3deg);
+      }
+      75% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes draw-line {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes star-arrive {
+      from {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1) rotate(0);
+        opacity: .85;
+      }
     }
 
     @keyframes sweep {
@@ -113,10 +214,7 @@
         transform: translateX(0);
         opacity: 0;
       }
-      8% {
-        opacity: 1;
-      }
-      76% {
+      8%, 76% {
         opacity: 1;
       }
       86%, 100% {
@@ -126,13 +224,35 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .greeting,
-      .separator {
+      .animated-heading {
+        display: none;
         animation: none;
       }
 
-      .name {
+      .static-heading {
+        display: inline;
+      }
+
+      .static-heading .name {
         fill: #a566ff;
+      }
+
+      .waving-hand {
+        animation: none;
+        transform: none;
+      }
+
+      .line,
+      .star {
+        animation: none;
+      }
+
+      .line {
+        stroke-dasharray: none;
+      }
+
+      .star {
+        opacity: .85;
       }
 
       .comet {
@@ -142,29 +262,42 @@
     }
   </style>
 
-  <text x="360" y="46" class="greeting">Ja Servus 👋 I'm <tspan class="name">MrKoby07</tspan>! :D</text>
+  <!--
+    The heading is split into three parts so the hand can rotate
+    around its own wrist without affecting the surrounding text.
+    Keep each text element's contents on one line.
+  -->
+  <g class="animated-heading" aria-hidden="true">
 
-  <g class="separator" aria-hidden="true">
-    <!-- Soft underglow along the full line. -->
+    <text x="294" y="46" class="greeting greeting-left" xml:space="preserve"><tspan>J<set attributeName="visibility" to="hidden" begin="0s" dur=".100s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".135s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".170s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur=".205s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".240s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".275s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur=".310s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur=".345s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan></text>
+
+    <!-- Positioning stays on the outer group; only the inner group waves. -->
+    <g transform="translate(316 46)">
+      <g class="waving-hand">
+        <text x="0" y="0" class="greeting hand">👋<set attributeName="visibility" to="hidden" begin="0s" dur=".480s"/></text>
+      </g>
+    </g>
+
+    <text x="340" y="46" class="greeting greeting-right" xml:space="preserve"><tspan>I<set attributeName="visibility" to="hidden" begin="0s" dur=".550s"/></tspan><tspan>'<set attributeName="visibility" to="hidden" begin="0s" dur=".585s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur=".620s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".655s"/></tspan><tspan class="name"><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".780s"/><animate attributeName="rotate" values="-9;3;0" begin=".780s" dur=".45s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".835s"/><animate attributeName="rotate" values="8;-3;0" begin=".835s" dur=".45s"/></tspan><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur=".890s"/><animate attributeName="rotate" values="-9;3;0" begin=".890s" dur=".45s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".945s"/><animate attributeName="rotate" values="8;-3;0" begin=".945s" dur=".45s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur="1.000s"/><animate attributeName="rotate" values="-9;3;0" begin="1.000s" dur=".45s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.055s"/><animate attributeName="rotate" values="8;-3;0" begin="1.055s" dur=".45s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.110s"/><animate attributeName="rotate" values="-9;3;0" begin="1.110s" dur=".45s"/></tspan><tspan>7<set attributeName="visibility" to="hidden" begin="0s" dur="1.165s"/><animate attributeName="rotate" values="8;-3;0" begin="1.165s" dur=".45s"/></tspan></tspan><tspan>!<set attributeName="visibility" to="hidden" begin="0s" dur="1.270s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.305s"/></tspan><tspan>:<set attributeName="visibility" to="hidden" begin="0s" dur="1.340s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.375s"/></tspan></text>
+
+  </g>
+
+  <!-- Matching layout without motion. -->
+  <g class="static-heading" aria-hidden="true">
+    <text x="294" y="46" class="greeting greeting-left">Ja Servus</text>
+    <text x="316" y="46" class="greeting hand">👋</text>
+    <text x="340" y="46" class="greeting greeting-right" xml:space="preserve">I'm <tspan class="name">MrKoby07</tspan>! :D</text>
+  </g>
+
+  <g aria-hidden="true">
     <use
       href="#separator-track"
-      fill="none"
-      stroke="url(#separator-color)"
-      stroke-width="6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      opacity=".08"/>
+      class="line line-glow"/>
 
-    <!-- Crisp, nearly full-width separator. -->
     <use
       href="#separator-track"
-      fill="none"
-      stroke="url(#separator-color)"
-      stroke-width="1.4"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
+      class="line line-front"/>
 
-    <!-- Moving highlight follows the separator's shape. -->
     <g mask="url(#track-mask)">
       <rect
         class="comet"
@@ -175,14 +308,15 @@
         fill="url(#comet-color)"/>
     </g>
 
-    <!-- Small central star beneath the stepped detail. -->
-    <path
-      d="M360 88
-         Q360 94 365 94
-         Q360 94 360 100
-         Q360 94 355 94
-         Q360 94 360 88 Z"
-      fill="#dc8add"
-      opacity=".85"/>
+    <g transform="translate(360 94)">
+      <path
+        class="star"
+        d="M0-6
+           Q0 0 5 0
+           Q0 0 0 6
+           Q0 0-5 0
+           Q0 0 0-6 Z"
+        fill="#dc8add"/>
+    </g>
   </g>
 </svg>
