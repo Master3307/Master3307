@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="288"
+  viewBox="0 0 280 288"
+  role="img"
+  aria-labelledby="interests-title interests-description">
+
+  <title id="interests-title">Interests and hobbies</title>
+
+  <desc id="interests-description">
+    Gaming, modding, archiving, programming,
+    exploring new things, and psychology.
+  </desc>
+
+  <style>
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      fill: #8e58d4;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+    }
+
+    .content {
+      animation: appear 1.3s ease-out both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content {
+        animation: none;
+      }
+    }
+  </style>
+
+  <g class="content">
+    <!-- Gaming: controller -->
+    <g class="icon"
+      transform="translate(26 20)"
+      aria-hidden="true">
+      <path d="
+        M9 7h10
+        c3 0 5 2 6 5
+        l2 8
+        c.7 3-2.5 5-4.5 3
+        L18 19h-8
+        l-4.5 4
+        c-2 2-5.2 0-4.5-3
+        l2-8
+        c1-3 3-5 6-5Z
+      "/>
+      <path d="M7 11v6 M4 14h6"/>
+      <circle cx="19" cy="12" r="1" fill="#dc8add" stroke="none"/>
+      <circle cx="22" cy="15" r="1" fill="#dc8add" stroke="none"/>
+    </g>
+
+    <text x="72" y="39">Gaming</text>
+    <path d="M72 58H264" class="divider"/>
+
+    <!-- Modding: adjustment sliders -->
+    <g class="icon"
+      transform="translate(26 64)"
+      aria-hidden="true">
+      <path d="
+        M3 6h5 M14 6h11
+        M3 14h13 M22 14h3
+        M3 22h3 M12 22h13
+      "/>
+      <circle cx="11" cy="6" r="3"/>
+      <circle cx="19" cy="14" r="3"/>
+      <circle cx="9" cy="22" r="3"/>
+    </g>
+
+    <text x="72" y="83">Modding</text>
+    <path d="M72 102H264" class="divider"/>
+
+    <!-- Archiving: archive box -->
+    <g class="icon"
+      transform="translate(26 108)"
+      aria-hidden="true">
+      <rect x="2" y="3" width="24" height="6" rx="1.5"/>
+      <path d="M4 9v15h20V9"/>
+      <rect x="10" y="13" width="8" height="4" rx="1"/>
+    </g>
+
+    <text x="72" y="127">Archiving</text>
+    <path d="M72 146H264" class="divider"/>
+
+    <!-- Programming: code brackets -->
+    <g class="icon"
+      transform="translate(26 152)"
+      aria-hidden="true">
+      <path d="
+        M8 7l-6 7 6 7
+        M20 7l6 7-6 7
+        M17 3l-6 22
+      "/>
+    </g>
+
+    <text x="72" y="171">Programming</text>
+    <path d="M72 190H264" class="divider"/>
+
+    <!-- Exploring: compass -->
+    <g class="icon"
+      transform="translate(26 196)"
+      aria-hidden="true">
+      <circle cx="14" cy="14" r="12"/>
+      <path d="M19 9l-3 7-7 3 3-7Z"/>
+      <path d="M14 2v2 M26 14h-2 M14 26v-2 M2 14h2"/>
+    </g>
+
+    <text x="72" y="215">Exploring new things</text>
+    <path d="M72 234H264" class="divider"/>
+
+    <!-- Psychology: brain -->
+    <g class="icon"
+      transform="translate(26 240)"
+      aria-hidden="true">
+      <path d="
+        M14 6
+        C12 1 6 2 6 7
+        C1 7 1 14 4 16
+        C1 21 6 27 11 24
+        C13 26 14 23 14 21
+        Z
+      "/>
+      <path d="
+        M14 6
+        C16 1 22 2 22 7
+        C27 7 27 14 24 16
+        C27 21 22 27 17 24
+        C15 26 14 23 14 21
+      "/>
+      <path d="
+        M6 7c0 3 2 4 4 4
+        M4 16c3-2 6 0 6 3
+        M22 7c0 3-2 4-4 4
+        M24 16c-3-2-6 0-6 3
+      "/>
+    </g>
+
+    <text x="72" y="259">Psychology</text>
+  </g>
+</svg>

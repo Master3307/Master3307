@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="54"
+  viewBox="0 0 280 54"
+  role="img"
+  aria-labelledby="usercard-link-title">
+
+  <title id="usercard-link-title">Usercard</title>
+
+  <style>
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      fill: #8e58d4;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .content {
+      animation: appear 1.3s ease-out both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content { animation: none; }
+    }
+  </style>
+
+  <g class="content">
+    <g class="icon"
+      transform="translate(26 12)"
+      aria-hidden="true">
+      <rect x="1" y="4" width="26" height="21" rx="3"/>
+      <circle cx="9" cy="11" r="3"/>
+      <path d="
+        M4 21v-1a5 5 0 0 1 10 0v1
+        M18 10h5
+        M18 15h5
+        M18 20h3
+      "/>
+    </g>
+
+    <text x="72" y="31">Usercard</text>
+
+    <g class="icon"
+      transform="translate(240 18)"
+      aria-hidden="true">
+      <path d="
+        M8 2h10v10
+        M18 2 7 13
+        M5 5H2v16h16v-3
+      "/>
+    </g>
+
+    <path
+      d="M72 50H264"
+      fill="none"
+      stroke="#8e58d4"
+      stroke-opacity=".16"/>
+  </g>
+</svg>

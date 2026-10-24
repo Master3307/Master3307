@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="294"
+  viewBox="0 0 280 294"
+  role="img"
+  aria-labelledby="specs-title specs-description">
+
+  <title id="specs-title">PC hardware specifications</title>
+
+  <desc id="specs-description">
+    CPU: AMD Ryzen 5 5600X.
+    GPU: NVIDIA GeForce RTX 4060 AERO 8GB.
+    RAM: Kingston Fury Beast 32GB (2x16GB) DDR4.
+    Monitor: 1920x1080 60Hz Samsung S22D300.
+  </desc>
+
+  <style>
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-weight: 400;
+      fill: #8e58d4;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+      fill: #dc8add;
+    }
+
+    .value {
+      font-size: 14px;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+    }
+
+    .content {
+      animation: appear 1.3s ease-out both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content {
+        animation: none;
+      }
+    }
+  </style>
+
+  <g class="content">
+    <!-- CPU -->
+    <g class="icon"
+      transform="translate(26 23)"
+      aria-hidden="true">
+      <rect x="5" y="5" width="18" height="18" rx="3"/>
+      <rect x="10" y="10" width="8" height="8" rx="1"/>
+
+      <path d="
+        M9 1v4 M14 1v4 M19 1v4
+        M9 23v4 M14 23v4 M19 23v4
+        M1 9h4 M1 14h4 M1 19h4
+        M23 9h4 M23 14h4 M23 19h4
+      "/>
+    </g>
+
+    <text x="72" y="34" class="label">CPU</text>
+    <text x="72" y="55" class="value">AMD Ryzen 5 5600X</text>
+
+    <path d="M72 68H264" class="divider"/>
+
+    <!-- GPU -->
+    <g class="icon"
+      transform="translate(26 77)"
+      aria-hidden="true">
+      <rect x="2" y="6" width="24" height="16" rx="2"/>
+      <circle cx="11" cy="14" r="5"/>
+      <circle cx="11" cy="14" r="1"/>
+
+      <path d="
+        M11 9v3
+        M16 14h-3
+        M11 19v-3
+        M6 14h3
+        M21 10v8
+        M6 22v3h12v-3
+        M2 6V3H0
+      "/>
+    </g>
+
+    <text x="72" y="88" class="label">GPU</text>
+    <text class="value">
+      <tspan x="72" y="109">NVIDIA GeForce RTX 4060</tspan>
+      <tspan x="72" y="127">AERO 8GB</tspan>
+    </text>
+
+    <path d="M72 140H264" class="divider"/>
+
+    <!-- RAM -->
+    <g class="icon"
+      transform="translate(26 149)"
+      aria-hidden="true">
+      <rect x="1" y="7" width="26" height="14" rx="2"/>
+
+      <path d="
+        M6 11h4v6H6z
+        M12 11h4v6h-4z
+        M18 11h4v6h-4z
+        M5 21v4
+        M9 21v4
+        M13 21v2
+        M17 21v4
+        M21 21v4
+        M25 21v4
+      "/>
+    </g>
+
+    <text x="72" y="160" class="label">RAM</text>
+    <text class="value">
+      <tspan x="72" y="181">Kingston Fury Beast 32GB</tspan>
+      <tspan x="72" y="199">(2x16GB) DDR4</tspan>
+    </text>
+
+    <path d="M72 212H264" class="divider"/>
+
+    <!-- Monitor -->
+    <g class="icon"
+      transform="translate(26 221)"
+      aria-hidden="true">
+      <rect x="1" y="2" width="26" height="18" rx="2"/>
+
+      <path d="
+        M1 16h26
+        M14 20v5
+        M8 26h12
+      "/>
+    </g>
+
+    <text x="72" y="232" class="label">Monitor</text>
+    <text class="value">
+      <tspan x="72" y="253">1920x1080 60Hz</tspan>
+      <tspan x="72" y="271">Samsung S22D300</tspan>
+    </text>
+  </g>
+</svg>

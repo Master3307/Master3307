@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="720"
+  height="96"
+  viewBox="0 0 720 96"
+  role="img"
+  aria-labelledby="intro-title">
+
+  <title id="intro-title">
+    Feel free to look through these Dropdowns for Information :3
+  </title>
+
+  <defs>
+    <!-- Fade the separator into the transparent background. -->
+    <linearGradient id="wave-fade" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="12%" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset="30%" stop-color="#fff"/>
+      <stop offset="70%" stop-color="#fff"/>
+      <stop offset="88%" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+
+    <mask
+      id="wave-mask"
+      maskUnits="userSpaceOnUse"
+      x="24"
+      y="48"
+      width="672"
+      height="36">
+      <rect
+        x="24"
+        y="48"
+        width="672"
+        height="36"
+        fill="url(#wave-fade)"/>
+    </mask>
+
+    <!--
+      Each pattern repeats every 224 units.
+      Moving by exactly one period makes the animation seamless.
+    -->
+    <path
+      id="wave-pattern"
+      d="
+        M-424 66
+        q56-14 112 0
+        t112 0
+        q56-14 112 0
+        t112 0
+        q56-14 112 0
+        t112 0
+        q56-14 112 0
+        t112 0
+        q56-14 112 0
+        t112 0
+        q56-14 112 0
+        t112 0
+      "/>
+  </defs>
+
+  <style>
+    .message {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      fill: #8e58d4;
+      text-anchor: middle;
+      animation: appear 1.3s ease-out both;
+    }
+
+    .separator {
+      animation: appear 1.8s ease-out both;
+    }
+
+    .wave {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .wave-back {
+      stroke: #8e58d4;
+      stroke-width: 1.5;
+      opacity: .65;
+      animation: flow-right 9s linear infinite;
+    }
+
+    .wave-front {
+      stroke: #dc8add;
+      stroke-width: 1.6;
+      opacity: .9;
+      animation: flow-left 7s linear infinite;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes flow-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-224px); }
+    }
+
+    @keyframes flow-right {
+      from { transform: translateX(-224px); }
+      to { transform: translateX(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .message,
+      .separator,
+      .wave-back,
+      .wave-front {
+        animation: none;
+      }
+
+      .wave-back {
+        transform: translateX(-56px);
+      }
+    }
+  </style>
+
+  <text x="360" y="32" class="message">
+    Feel free to look through these Dropdowns for Information :3
+  </text>
+
+  <g class="separator">
+    <g mask="url(#wave-mask)">
+      <!-- A broader, quieter wave behind the pink wave. -->
+      <g transform="translate(0 16.5) scale(1 .75)">
+        <use
+          href="#wave-pattern"
+          class="wave wave-back"/>
+      </g>
+
+      <!-- The foreground wave flows in the opposite direction. -->
+      <use
+        href="#wave-pattern"
+        class="wave wave-front"/>
+    </g>
+  </g>
+</svg>

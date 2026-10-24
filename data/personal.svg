@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="240"
+  viewBox="0 0 280 240"
+  role="img"
+  aria-labelledby="personal-title personal-description">
+
+  <title id="personal-title">Personal details</title>
+
+  <desc id="personal-description">
+    Name: Korbinian.
+    Birthday: 09.09.
+    Location: Germany, Bavaria.
+    Languages: German (native), English (fluent).
+  </desc>
+
+  <style>
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-weight: 400;
+      fill: #8e58d4;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+      fill: #dc8add;
+    }
+
+    .value {
+      font-size: 14px;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+    }
+
+    .content {
+      animation: appear 1.3s ease-out both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content {
+        animation: none;
+      }
+    }
+  </style>
+
+  <g class="content">
+    <!-- Name: person -->
+    <g class="icon"
+      transform="translate(26 23)"
+      aria-hidden="true">
+      <circle cx="14" cy="8" r="5"/>
+      <path d="M4 26v-3a10 10 0 0 1 20 0v3"/>
+    </g>
+
+    <text x="72" y="34" class="label">Name</text>
+    <text x="72" y="55" class="value">Korbinian</text>
+
+    <path d="M72 68H264" class="divider"/>
+
+    <!-- Birthday: calendar -->
+    <g class="icon"
+      transform="translate(26 77)"
+      aria-hidden="true">
+      <rect x="2" y="5" width="24" height="21" rx="3"/>
+
+      <path d="
+        M8 2v6
+        M20 2v6
+        M2 12h24
+        M8 17h2
+        M14 17h2
+        M20 17h1
+        M8 22h2
+        M14 22h2
+      "/>
+    </g>
+
+    <text x="72" y="88" class="label">Birthday</text>
+    <text x="72" y="109" class="value">09.09.</text>
+
+    <path d="M72 122H264" class="divider"/>
+
+    <!-- Location: map pin -->
+    <g class="icon"
+      transform="translate(26 131)"
+      aria-hidden="true">
+      <path d="
+        M14 27
+        C11 23 4 16 4 11
+        a10 10 0 0 1 20 0
+        c0 5-7 12-10 16Z
+      "/>
+      <circle cx="14" cy="11" r="3.5"/>
+    </g>
+
+    <text x="72" y="142" class="label">Location</text>
+    <text x="72" y="163" class="value">Germany, Bavaria</text>
+
+    <path d="M72 176H264" class="divider"/>
+
+    <!-- Languages: globe -->
+    <g class="icon"
+      transform="translate(26 185)"
+      aria-hidden="true">
+      <circle cx="14" cy="14" r="12"/>
+      <ellipse cx="14" cy="14" rx="5" ry="12"/>
+      <path d="M2 14h24 M4 7h20 M4 21h20"/>
+    </g>
+
+    <text x="72" y="196" class="label">Languages</text>
+    <text x="72" y="217" class="value">
+      German (native), English (fluent)
+    </text>
+  </g>
+</svg>

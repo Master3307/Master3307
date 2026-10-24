@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="244"
+  viewBox="0 0 280 244"
+  role="img"
+  aria-labelledby="skills-title skills-description">
+
+  <title id="skills-title">Skills</title>
+
+  <desc id="skills-description">
+    Fast learner.
+    Quickly understands different topics.
+    Good at problem-solving.
+    Creative thinker.
+    Strong attention to detail.
+  </desc>
+
+  <style>
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      fill: #8e58d4;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+    }
+
+    .content {
+      animation: appear 1.3s ease-out both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content {
+        animation: none;
+      }
+    }
+  </style>
+
+  <g class="content">
+    <!-- Fast learner: lightning bolt -->
+    <g class="icon"
+      transform="translate(26 20)"
+      aria-hidden="true">
+      <path d="M16 2 5 16h8l-1 10 11-15h-8Z"/>
+    </g>
+
+    <text x="72" y="39">Fast learner</text>
+    <path d="M72 58H264" class="divider"/>
+
+    <!-- Understanding different topics: open book -->
+    <g class="icon"
+      transform="translate(26 64)"
+      aria-hidden="true">
+      <path d="
+        M14 7
+        C10 4 6 3 2 4
+        v19
+        c4-1 8 0 12 3
+        c4-3 8-4 12-3
+        V4
+        c-4-1-8 0-12 3Z
+        M14 7v19
+        M6 9l4 1
+        M6 14l4 1
+        M18 10l4-1
+        M18 15l4-1
+      "/>
+    </g>
+
+    <text>
+      <tspan x="72" y="76">Quickly understands</tspan>
+      <tspan x="72" y="94">different topics</tspan>
+    </text>
+    <path d="M72 102H264" class="divider"/>
+
+    <!-- Problem-solving: connected steps -->
+    <g class="icon"
+      transform="translate(26 108)"
+      aria-hidden="true">
+      <rect x="2" y="2" width="9" height="9" rx="2"/>
+      <rect x="17" y="17" width="9" height="9" rx="2"/>
+      <path d="
+        M11 6h8a3 3 0 0 1 3 3v8
+        M19 14l3 3 3-3
+        M4 6l2 2 3-4
+        M19 21l2 2 3-4
+      "/>
+    </g>
+
+    <text x="72" y="127">Good at problem-solving</text>
+    <path d="M72 146H264" class="divider"/>
+
+    <!-- Creative thinking: light bulb -->
+    <g class="icon"
+      transform="translate(26 152)"
+      aria-hidden="true">
+      <path d="
+        M9 20
+        c0-3-4-5-4-10
+        a9 9 0 0 1 18 0
+        c0 5-4 7-4 10
+        Z
+        M10 24h8
+        M12 27h4
+        M14 20v-7
+        M10 10l4 3 4-3
+      "/>
+    </g>
+
+    <text x="72" y="171">Creative thinker</text>
+    <path d="M72 190H264" class="divider"/>
+
+    <!-- Attention to detail: magnifying glass -->
+    <g class="icon"
+      transform="translate(26 196)"
+      aria-hidden="true">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="
+        M17 17l9 9
+        M7 11l3 3 5-6
+      "/>
+    </g>
+
+    <text x="72" y="215">Strong attention to detail</text>
+  </g>
+</svg>

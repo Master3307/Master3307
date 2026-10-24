@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="28"
+  viewBox="0 0 100 28"
+  role="img"
+  aria-labelledby="stats-heading-title">
+
+  <title id="stats-heading-title">Stats</title>
+
+  <g
+    fill="none"
+    stroke="#dc8add"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true">
+    <path d="M2 3v22h25"/>
+    <rect x="6" y="15" width="4" height="10" rx="1"/>
+    <rect x="13" y="10" width="4" height="15" rx="1"/>
+    <rect x="20" y="5" width="4" height="20" rx="1"/>
+  </g>
+
+  <text
+    x="36"
+    y="20"
+    fill="#dc8add"
+    font-family="Segoe UI, Ubuntu, Arial, sans-serif"
+    font-size="18"
+    font-weight="400">Stats</text>
+</svg>
