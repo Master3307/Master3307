@@ -1,34 +1,107 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  width="280"
-  height="294"
-  viewBox="0 0 280 294"
+  width="840"
+  height="402"
+  viewBox="0 0 840 402"
   role="img"
   aria-labelledby="specs-title specs-description">
 
-  <title id="specs-title">PC hardware specifications</title>
+  <title id="specs-title">System specifications</title>
 
   <desc id="specs-description">
     CPU: AMD Ryzen 5 5600X.
     GPU: NVIDIA GeForce RTX 4060 AERO 8GB.
     RAM: Kingston Fury Beast 32GB (2x16GB) DDR4.
-    Monitor: 1920x1080 60Hz Samsung S22D300.
+    Motherboard: Gigabyte B550M DS3H.
+    Displays: two 1920x1080 displays; Samsung S22D300 at 60Hz.
+    OS: CachyOS x86_64.
+    Desktop: KDE Plasma on Wayland, Breeze theme, Papirus-Dark icons.
   </desc>
+
+  <defs>
+    <linearGradient id="divider-shimmer" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
+      <stop offset="65%" stop-color="#b879d8" stop-opacity=".3"/>
+      <stop offset="85%" stop-color="#b879d8" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#8e58d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="divider-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="72" y="66" width="752" height="4"/>
+    </clipPath>
+
+    <g id="row-divider">
+      <path d="M72 68H824" class="divider"/>
+      <g clip-path="url(#divider-clip)">
+        <rect
+          class="shimmer"
+          x="-100"
+          y="67.3"
+          width="100"
+          height="1.4"/>
+      </g>
+    </g>
+
+    <g id="cpu-icon">
+      <rect x="5" y="5" width="18" height="18" rx="3"/>
+      <rect x="10" y="10" width="8" height="8" rx="1"/>
+      <path d="
+        M9 1v4 M14 1v4 M19 1v4
+        M9 23v4 M14 23v4 M19 23v4
+        M1 9h4 M1 14h4 M1 19h4
+        M23 9h4 M23 14h4 M23 19h4"/>
+    </g>
+
+    <g id="gpu-icon">
+      <rect x="2" y="6" width="24" height="16" rx="2"/>
+      <circle cx="11" cy="14" r="5"/>
+      <circle cx="11" cy="14" r="1"/>
+      <path d="
+        M11 9v3 M16 14h-3 M11 19v-3 M6 14h3
+        M21 10v8 M6 22v3h12v-3 M2 6V3H0"/>
+    </g>
+
+    <g id="ram-icon">
+      <rect x="1" y="7" width="26" height="14" rx="2"/>
+      <path d="
+        M6 11h4v6H6z M12 11h4v6h-4z M18 11h4v6h-4z
+        M5 21v4 M9 21v4 M13 21v2
+        M17 21v4 M21 21v4 M25 21v4"/>
+    </g>
+
+    <g id="board-icon">
+      <rect x="2" y="2" width="24" height="24" rx="2"/>
+      <rect x="7" y="7" width="9" height="9" rx="1"/>
+      <path d="M20 6v10 M23 6v10 M6 21h16 M6 24h10"/>
+    </g>
+
+    <g id="monitor-icon">
+      <rect x="1" y="2" width="26" height="18" rx="2"/>
+      <path d="M1 16h26 M14 20v5 M8 26h12"/>
+    </g>
+
+    <g id="os-icon">
+      <rect x="2" y="3" width="24" height="22" rx="3"/>
+      <path d="M2 9h24 M6 6h1 M10 6h1 M8 14l4 4-4 4 M16 22h5"/>
+    </g>
+
+    <g id="desktop-icon">
+      <rect x="2" y="3" width="24" height="22" rx="3"/>
+      <path d="M2 9h24 M10 9v16 M10 18h16"/>
+    </g>
+  </defs>
 
   <style>
     text {
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 14px;
       font-weight: 400;
       fill: #8e58d4;
     }
 
     .label {
-      font-size: 14px;
       font-weight: 600;
       fill: #dc8add;
-    }
-
-    .value {
-      font-size: 14px;
     }
 
     .icon {
@@ -39,11 +112,30 @@
       stroke-linejoin: round;
     }
 
+    .icon-pulse {
+      animation: breathe 6s ease-in-out infinite;
+      animation-delay: var(--pulse-delay, 0s);
+    }
+
     .divider {
       fill: none;
       stroke: #8e58d4;
       stroke-opacity: .16;
     }
+
+    .shimmer {
+      fill: url(#divider-shimmer);
+      animation: sweep 12s linear infinite;
+      animation-delay: var(--shimmer-delay, 0s);
+      opacity: 0;
+    }
+
+    .row-2 { --pulse-delay: -.7s; --shimmer-delay: -2s; }
+    .row-3 { --pulse-delay: -1.4s; --shimmer-delay: -4s; }
+    .row-4 { --pulse-delay: -2.1s; --shimmer-delay: -6s; }
+    .row-5 { --pulse-delay: -2.8s; --shimmer-delay: -8s; }
+    .row-6 { --pulse-delay: -3.5s; --shimmer-delay: -10s; }
+    .row-7 { --pulse-delay: -4.2s; }
 
     .content {
       animation: appear 1.3s ease-out both;
@@ -54,105 +146,113 @@
       to { opacity: 1; }
     }
 
+    @keyframes breathe {
+      0%, 100% { opacity: .65; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      12%, 76% {
+        opacity: .4;
+      }
+      90%, 100% {
+        transform: translateX(920px);
+        opacity: 0;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .content {
+      .content,
+      .icon-pulse {
+        animation: none;
+      }
+
+      .shimmer {
+        display: none;
         animation: none;
       }
     }
   </style>
 
   <g class="content">
-    <!-- CPU -->
-    <g class="icon"
-      transform="translate(26 23)"
-      aria-hidden="true">
-      <rect x="5" y="5" width="18" height="18" rx="3"/>
-      <rect x="10" y="10" width="8" height="8" rx="1"/>
-
-      <path d="
-        M9 1v4 M14 1v4 M19 1v4
-        M9 23v4 M14 23v4 M19 23v4
-        M1 9h4 M1 14h4 M1 19h4
-        M23 9h4 M23 14h4 M23 19h4
-      "/>
+    <g>
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#cpu-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">CPU</text>
+      <text x="72" y="55">AMD Ryzen 5 5600X</text>
+      <use href="#row-divider" aria-hidden="true"/>
     </g>
 
-    <text x="72" y="34" class="label">CPU</text>
-    <text x="72" y="55" class="value">AMD Ryzen 5 5600X</text>
-
-    <path d="M72 68H264" class="divider"/>
-
-    <!-- GPU -->
-    <g class="icon"
-      transform="translate(26 77)"
-      aria-hidden="true">
-      <rect x="2" y="6" width="24" height="16" rx="2"/>
-      <circle cx="11" cy="14" r="5"/>
-      <circle cx="11" cy="14" r="1"/>
-
-      <path d="
-        M11 9v3
-        M16 14h-3
-        M11 19v-3
-        M6 14h3
-        M21 10v8
-        M6 22v3h12v-3
-        M2 6V3H0
-      "/>
+    <g class="row-2" transform="translate(0 54)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#gpu-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">GPU</text>
+      <text x="72" y="55">NVIDIA GeForce RTX 4060 AERO 8GB</text>
+      <use href="#row-divider" aria-hidden="true"/>
     </g>
 
-    <text x="72" y="88" class="label">GPU</text>
-    <text class="value">
-      <tspan x="72" y="109">NVIDIA GeForce RTX 4060</tspan>
-      <tspan x="72" y="127">AERO 8GB</tspan>
-    </text>
-
-    <path d="M72 140H264" class="divider"/>
-
-    <!-- RAM -->
-    <g class="icon"
-      transform="translate(26 149)"
-      aria-hidden="true">
-      <rect x="1" y="7" width="26" height="14" rx="2"/>
-
-      <path d="
-        M6 11h4v6H6z
-        M12 11h4v6h-4z
-        M18 11h4v6h-4z
-        M5 21v4
-        M9 21v4
-        M13 21v2
-        M17 21v4
-        M21 21v4
-        M25 21v4
-      "/>
+    <g class="row-3" transform="translate(0 108)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#ram-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">RAM</text>
+      <text x="72" y="55">Kingston Fury Beast 32GB (2x16GB) DDR4</text>
+      <use href="#row-divider" aria-hidden="true"/>
     </g>
 
-    <text x="72" y="160" class="label">RAM</text>
-    <text class="value">
-      <tspan x="72" y="181">Kingston Fury Beast 32GB</tspan>
-      <tspan x="72" y="199">(2x16GB) DDR4</tspan>
-    </text>
-
-    <path d="M72 212H264" class="divider"/>
-
-    <!-- Monitor -->
-    <g class="icon"
-      transform="translate(26 221)"
-      aria-hidden="true">
-      <rect x="1" y="2" width="26" height="18" rx="2"/>
-
-      <path d="
-        M1 16h26
-        M14 20v5
-        M8 26h12
-      "/>
+    <g class="row-4" transform="translate(0 162)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#board-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">Motherboard</text>
+      <text x="72" y="55">Gigabyte B550M DS3H</text>
+      <use href="#row-divider" aria-hidden="true"/>
     </g>
 
-    <text x="72" y="232" class="label">Monitor</text>
-    <text class="value">
-      <tspan x="72" y="253">1920x1080 60Hz</tspan>
-      <tspan x="72" y="271">Samsung S22D300</tspan>
-    </text>
+    <g class="row-5" transform="translate(0 216)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#monitor-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">Displays</text>
+      <text x="72" y="55">2 × 1920×1080 · Samsung S22D300 at 60Hz</text>
+      <use href="#row-divider" aria-hidden="true"/>
+    </g>
+
+    <g class="row-6" transform="translate(0 270)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#os-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">Operating system</text>
+      <text x="72" y="55">CachyOS x86_64</text>
+      <use href="#row-divider" aria-hidden="true"/>
+    </g>
+
+    <g class="row-7" transform="translate(0 324)">
+      <g class="icon" transform="translate(26 23)" aria-hidden="true">
+        <g class="icon-pulse">
+          <use href="#desktop-icon"/>
+        </g>
+      </g>
+      <text x="72" y="34" class="label">Desktop</text>
+      <text x="72" y="55">KDE Plasma · Wayland · Breeze · Papirus-Dark icons</text>
+    </g>
   </g>
 </svg>

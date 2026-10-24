@@ -53,8 +53,8 @@
     <picture>
       <img
         src="./data/personal.svg"
-        alt="Personal details: name, birthday, location, and languages"
-        width="280"
+        alt="Personal details: Korbinian; birthday: 09.09.; location: Germany, Bavaria; languages: German (native), English (fluent)"
+        width="840"
       />
     </picture>
   </p>
@@ -78,7 +78,7 @@
       <img
         src="./data/interests.svg"
         alt="Interests and hobbies: gaming, modding, archiving, programming, exploring new things, and psychology"
-        width="280"
+        width="840"
       />
     </picture>
   </p>
@@ -102,7 +102,7 @@
       <img
         src="./data/skills.svg"
         alt="Skills: fast learner, quickly understands different topics, good at problem-solving, creative thinker, and strong attention to detail"
-        width="280"
+        width="840"
       />
     </picture>
   </p>
@@ -126,7 +126,7 @@
       <img
         src="./data/link-home.svg"
         alt="HomeSite"
-        width="280"
+        width="840"
       />
     </a>
     <br />
@@ -134,7 +134,7 @@
       <img
         src="./data/link-usercard.svg"
         alt="Usercard"
-        width="280"
+        width="840"
       />
     </a>
     <br />
@@ -142,7 +142,7 @@
       <img
         src="./data/link-youtube.svg"
         alt="YouTube"
-        width="280"
+        width="840"
       />
     </a>
   </p>
@@ -165,8 +165,8 @@
     <picture>
       <img
         src="./data/specs.svg"
-        alt="PC specifications: CPU, GPU, RAM, and monitor"
-        width="280"
+        alt="System specifications: AMD Ryzen 5 5600X; NVIDIA GeForce RTX 4060 AERO 8GB; Kingston Fury Beast 32GB (2x16GB) DDR4; Gigabyte B550M DS3H; two 1920x1080 displays, including Samsung S22D300 at 60Hz; CachyOS x86_64; KDE Plasma on Wayland with Breeze and Papirus-Dark icons"
+        width="840"
       />
     </picture>
   </p>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  width="280"
+  width="840"
   height="54"
-  viewBox="0 0 280 54"
+  viewBox="0 0 840 54"
   role="img"
   aria-labelledby="youtube-link-title">
 
@@ -23,6 +23,15 @@
       stroke-linejoin: round;
     }
 
+    .icon-pulse {
+      animation: breathe 6s ease-in-out infinite;
+      animation-delay: -4s;
+    }
+
+    .pulse-link {
+      animation-delay: -1s;
+    }
+
     .content {
       animation: appear 1.3s ease-out both;
     }
@@ -32,8 +41,16 @@
       to { opacity: 1; }
     }
 
+    @keyframes breathe {
+      0%, 100% { opacity: .65; }
+      50% { opacity: 1; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .content { animation: none; }
+      .content,
+      .icon-pulse {
+        animation: none;
+      }
     }
   </style>
 
@@ -41,20 +58,24 @@
     <g class="icon"
       transform="translate(26 12)"
       aria-hidden="true">
-      <rect x="1" y="5" width="26" height="19" rx="5"/>
-      <path d="M11 10l8 4.5-8 4.5Z"/>
+      <g class="icon-pulse">
+        <rect x="1" y="5" width="26" height="19" rx="5"/>
+        <path d="M11 10l8 4.5-8 4.5Z"/>
+      </g>
     </g>
 
     <text x="72" y="31">YouTube</text>
 
     <g class="icon"
-      transform="translate(240 18)"
+      transform="translate(800 18)"
       aria-hidden="true">
-      <path d="
-        M8 2h10v10
-        M18 2 7 13
-        M5 5H2v16h16v-3
-      "/>
+      <g class="icon-pulse pulse-link">
+        <path d="
+          M8 2h10v10
+          M18 2 7 13
+          M5 5H2v16h16v-3
+        "/>
+      </g>
     </g>
   </g>
 </svg>

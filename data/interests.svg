@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  width="280"
+  width="840"
   height="288"
-  viewBox="0 0 280 288"
+  viewBox="0 0 840 288"
   role="img"
   aria-labelledby="interests-title interests-description">
 
@@ -11,6 +11,24 @@
     Gaming, modding, archiving, programming,
     exploring new things, and psychology.
   </desc>
+
+  <defs>
+    <linearGradient id="divider-shimmer" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
+      <stop offset="65%" stop-color="#b879d8" stop-opacity=".3"/>
+      <stop offset="85%" stop-color="#b879d8" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#8e58d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="divider-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="72" y="56" width="752" height="4"/>
+      <rect x="72" y="100" width="752" height="4"/>
+      <rect x="72" y="144" width="752" height="4"/>
+      <rect x="72" y="188" width="752" height="4"/>
+      <rect x="72" y="232" width="752" height="4"/>
+    </clipPath>
+  </defs>
 
   <style>
     text {
@@ -28,10 +46,56 @@
       stroke-linejoin: round;
     }
 
+    .icon-pulse {
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    .pulse-2 {
+      animation-delay: -1s;
+    }
+
+    .pulse-3 {
+      animation-delay: -2s;
+    }
+
+    .pulse-4 {
+      animation-delay: -3s;
+    }
+
+    .pulse-5 {
+      animation-delay: -4s;
+    }
+
+    .pulse-6 {
+      animation-delay: -5s;
+    }
+
     .divider {
       fill: none;
       stroke: #8e58d4;
       stroke-opacity: .16;
+    }
+
+    .shimmer {
+      fill: url(#divider-shimmer);
+      animation: sweep 12s linear infinite;
+      opacity: 0;
+    }
+
+    .shimmer-2 {
+      animation-delay: -2.4s;
+    }
+
+    .shimmer-3 {
+      animation-delay: -4.8s;
+    }
+
+    .shimmer-4 {
+      animation-delay: -7.2s;
+    }
+
+    .shimmer-5 {
+      animation-delay: -9.6s;
     }
 
     .content {
@@ -43,8 +107,36 @@
       to { opacity: 1; }
     }
 
+    @keyframes breathe {
+      0%, 100% { opacity: .65; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      12% {
+        opacity: .4;
+      }
+      76% {
+        opacity: .4;
+      }
+      90%, 100% {
+        transform: translateX(920px);
+        opacity: 0;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .content {
+      .content,
+      .icon-pulse {
+        animation: none;
+      }
+
+      .shimmer {
+        display: none;
         animation: none;
       }
     }
@@ -55,107 +147,162 @@
     <g class="icon"
       transform="translate(26 20)"
       aria-hidden="true">
-      <path d="
-        M9 7h10
-        c3 0 5 2 6 5
-        l2 8
-        c.7 3-2.5 5-4.5 3
-        L18 19h-8
-        l-4.5 4
-        c-2 2-5.2 0-4.5-3
-        l2-8
-        c1-3 3-5 6-5Z
-      "/>
-      <path d="M7 11v6 M4 14h6"/>
-      <circle cx="19" cy="12" r="1" fill="#dc8add" stroke="none"/>
-      <circle cx="22" cy="15" r="1" fill="#dc8add" stroke="none"/>
+      <g class="icon-pulse">
+        <path d="
+          M9 7h10
+          c3 0 5 2 6 5
+          l2 8
+          c.7 3-2.5 5-4.5 3
+          L18 19h-8
+          l-4.5 4
+          c-2 2-5.2 0-4.5-3
+          l2-8
+          c1-3 3-5 6-5Z
+        "/>
+        <path d="M7 11v6 M4 14h6"/>
+        <circle cx="19" cy="12" r="1" fill="#dc8add" stroke="none"/>
+        <circle cx="22" cy="15" r="1" fill="#dc8add" stroke="none"/>
+      </g>
     </g>
 
     <text x="72" y="39">Gaming</text>
-    <path d="M72 58H264" class="divider"/>
+    <path d="M72 58H824" class="divider"/>
 
     <!-- Modding: adjustment sliders -->
     <g class="icon"
       transform="translate(26 64)"
       aria-hidden="true">
-      <path d="
-        M3 6h5 M14 6h11
-        M3 14h13 M22 14h3
-        M3 22h3 M12 22h13
-      "/>
-      <circle cx="11" cy="6" r="3"/>
-      <circle cx="19" cy="14" r="3"/>
-      <circle cx="9" cy="22" r="3"/>
+      <g class="icon-pulse pulse-2">
+        <path d="
+          M3 6h5 M14 6h11
+          M3 14h13 M22 14h3
+          M3 22h3 M12 22h13
+        "/>
+        <circle cx="11" cy="6" r="3"/>
+        <circle cx="19" cy="14" r="3"/>
+        <circle cx="9" cy="22" r="3"/>
+      </g>
     </g>
 
     <text x="72" y="83">Modding</text>
-    <path d="M72 102H264" class="divider"/>
+    <path d="M72 102H824" class="divider"/>
 
     <!-- Archiving: archive box -->
     <g class="icon"
       transform="translate(26 108)"
       aria-hidden="true">
-      <rect x="2" y="3" width="24" height="6" rx="1.5"/>
-      <path d="M4 9v15h20V9"/>
-      <rect x="10" y="13" width="8" height="4" rx="1"/>
+      <g class="icon-pulse pulse-3">
+        <rect x="2" y="3" width="24" height="6" rx="1.5"/>
+        <path d="M4 9v15h20V9"/>
+        <rect x="10" y="13" width="8" height="4" rx="1"/>
+      </g>
     </g>
 
     <text x="72" y="127">Archiving</text>
-    <path d="M72 146H264" class="divider"/>
+    <path d="M72 146H824" class="divider"/>
 
     <!-- Programming: code brackets -->
     <g class="icon"
       transform="translate(26 152)"
       aria-hidden="true">
-      <path d="
-        M8 7l-6 7 6 7
-        M20 7l6 7-6 7
-        M17 3l-6 22
-      "/>
+      <g class="icon-pulse pulse-4">
+        <path d="
+          M8 7l-6 7 6 7
+          M20 7l6 7-6 7
+          M17 3l-6 22
+        "/>
+      </g>
     </g>
 
     <text x="72" y="171">Programming</text>
-    <path d="M72 190H264" class="divider"/>
+    <path d="M72 190H824" class="divider"/>
 
     <!-- Exploring: compass -->
     <g class="icon"
       transform="translate(26 196)"
       aria-hidden="true">
-      <circle cx="14" cy="14" r="12"/>
-      <path d="M19 9l-3 7-7 3 3-7Z"/>
-      <path d="M14 2v2 M26 14h-2 M14 26v-2 M2 14h2"/>
+      <g class="icon-pulse pulse-5">
+        <circle cx="14" cy="14" r="12"/>
+        <path d="M19 9l-3 7-7 3 3-7Z"/>
+        <path d="M14 2v2 M26 14h-2 M14 26v-2 M2 14h2"/>
+      </g>
     </g>
 
     <text x="72" y="215">Exploring new things</text>
-    <path d="M72 234H264" class="divider"/>
+    <path d="M72 234H824" class="divider"/>
 
     <!-- Psychology: brain -->
     <g class="icon"
       transform="translate(26 240)"
       aria-hidden="true">
-      <path d="
-        M14 6
-        C12 1 6 2 6 7
-        C1 7 1 14 4 16
-        C1 21 6 27 11 24
-        C13 26 14 23 14 21
-        Z
-      "/>
-      <path d="
-        M14 6
-        C16 1 22 2 22 7
-        C27 7 27 14 24 16
-        C27 21 22 27 17 24
-        C15 26 14 23 14 21
-      "/>
-      <path d="
-        M6 7c0 3 2 4 4 4
-        M4 16c3-2 6 0 6 3
-        M22 7c0 3-2 4-4 4
-        M24 16c-3-2-6 0-6 3
-      "/>
+      <g class="icon-pulse pulse-6">
+        <path d="
+          M14 6
+          C12 1 6 2 6 7
+          C1 7 1 14 4 16
+          C1 21 6 27 11 24
+          C13 26 14 23 14 21
+          Z
+        "/>
+        <path d="
+          M14 6
+          C16 1 22 2 22 7
+          C27 7 27 14 24 16
+          C27 21 22 27 17 24
+          C15 26 14 23 14 21
+        "/>
+        <path d="
+          M6 7c0 3 2 4 4 4
+          M4 16c3-2 6 0 6 3
+          M22 7c0 3-2 4-4 4
+          M24 16c-3-2-6 0-6 3
+        "/>
+      </g>
     </g>
 
     <text x="72" y="259">Psychology</text>
+
+    <!-- Subtle moving highlights along the divider lines. -->
+    <g clip-path="url(#divider-clip)" aria-hidden="true">
+      <rect
+        class="shimmer"
+        x="-100"
+        y="57.3"
+        width="100"
+        height="1.4"
+      />
+
+      <rect
+        class="shimmer shimmer-2"
+        x="-100"
+        y="101.3"
+        width="100"
+        height="1.4"
+      />
+
+      <rect
+        class="shimmer shimmer-3"
+        x="-100"
+        y="145.3"
+        width="100"
+        height="1.4"
+      />
+
+      <rect
+        class="shimmer shimmer-4"
+        x="-100"
+        y="189.3"
+        width="100"
+        height="1.4"
+      />
+
+      <rect
+        class="shimmer shimmer-5"
+        x="-100"
+        y="233.3"
+        width="100"
+        height="1.4"
+      />
+    </g>
   </g>
 </svg>

@@ -1,11 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  width="280"
+  width="840"
   height="54"
-  viewBox="0 0 280 54"
+  viewBox="0 0 840 54"
   role="img"
   aria-labelledby="home-link-title">
 
   <title id="home-link-title">HomeSite</title>
+
+  <defs>
+    <linearGradient id="divider-shimmer" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
+      <stop offset="65%" stop-color="#b879d8" stop-opacity=".3"/>
+      <stop offset="85%" stop-color="#b879d8" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#8e58d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="divider-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="72" y="48" width="752" height="4"/>
+    </clipPath>
+  </defs>
 
   <style>
     text {
@@ -23,6 +37,26 @@
       stroke-linejoin: round;
     }
 
+    .icon-pulse {
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    .pulse-link {
+      animation-delay: -3s;
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+    }
+
+    .shimmer {
+      fill: url(#divider-shimmer);
+      animation: sweep 12s linear infinite;
+      opacity: 0;
+    }
+
     .content {
       animation: appear 1.3s ease-out both;
     }
@@ -32,8 +66,38 @@
       to { opacity: 1; }
     }
 
+    @keyframes breathe {
+      0%, 100% { opacity: .65; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      12% {
+        opacity: .4;
+      }
+      76% {
+        opacity: .4;
+      }
+      90%, 100% {
+        transform: translateX(920px);
+        opacity: 0;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .content { animation: none; }
+      .content,
+      .icon-pulse {
+        animation: none;
+      }
+
+      .shimmer {
+        display: none;
+        animation: none;
+      }
     }
   </style>
 
@@ -41,29 +105,39 @@
     <g class="icon"
       transform="translate(26 12)"
       aria-hidden="true">
-      <path d="
-        M2 13 14 3l12 10
-        M5 11v15h18V11
-        M11 26V16h6v10
-      "/>
+      <g class="icon-pulse">
+        <path d="
+          M2 13 14 3l12 10
+          M5 11v15h18V11
+          M11 26V16h6v10
+        "/>
+      </g>
     </g>
 
     <text x="72" y="31">HomeSite</text>
 
     <g class="icon"
-      transform="translate(240 18)"
+      transform="translate(800 18)"
       aria-hidden="true">
-      <path d="
-        M8 2h10v10
-        M18 2 7 13
-        M5 5H2v16h16v-3
-      "/>
+      <g class="icon-pulse pulse-link">
+        <path d="
+          M8 2h10v10
+          M18 2 7 13
+          M5 5H2v16h16v-3
+        "/>
+      </g>
     </g>
 
-    <path
-      d="M72 50H264"
-      fill="none"
-      stroke="#8e58d4"
-      stroke-opacity=".16"/>
+    <path d="M72 50H824" class="divider"/>
+
+    <g clip-path="url(#divider-clip)" aria-hidden="true">
+      <rect
+        class="shimmer"
+        x="-100"
+        y="49.3"
+        width="100"
+        height="1.4"
+      />
+    </g>
   </g>
 </svg>
