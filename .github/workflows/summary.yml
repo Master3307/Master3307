@@ -70,6 +70,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
 
+      - name: Optimize generated SVGs
+        run: pnpm optimize:stats
+
       - name: Validate generated SVGs
         run: |
           set -euo pipefail
