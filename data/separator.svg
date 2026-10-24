@@ -20,14 +20,14 @@
     <mask
       id="wave-mask"
       maskUnits="userSpaceOnUse"
-      x="24"
+      x="72"
       y="6"
-      width="672"
+      width="576"
       height="36">
       <rect
-        x="24"
+        x="72"
         y="6"
-        width="672"
+        width="576"
         height="36"
         fill="url(#wave-fade)"/>
     </mask>
@@ -36,17 +36,17 @@
       id="wave-pattern"
       d="
         M-424 24
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
       "/>
   </defs>

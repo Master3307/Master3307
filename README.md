@@ -9,11 +9,13 @@
 </p>
 
 <p align="center">
-  <img
-    src="./data/welcome-title.svg"
-    alt="Welcome to my README! Here's a little about me:"
-    width="690"
-  />
+  <picture>
+    <img
+      src="./data/welcome-title.svg"
+      alt="Welcome to my README! Here's a little about me:"
+      width="690"
+    />
+  </picture>
 </p>
 
 <p>
@@ -25,82 +27,98 @@
 </p>
 
 <p align="center">
-  <img
-    src="./data/dropdowns-title.svg"
-    alt="Feel free to look through these dropdowns for information :3"
-    width="690"
-  />
+  <picture>
+    <img
+      src="./data/dropdowns-title.svg"
+      alt="Feel free to look through these dropdowns for information :3"
+      width="690"
+    />
+  </picture>
 </p>
 
 <details>
   <summary>
-    <img
-      src="./data/personal-title.svg"
-      alt="Personal"
-      width="132"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/personal-title.svg"
+        alt="Personal"
+        width="132"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
-    <img
-      src="./data/personal.svg"
-      alt="Personal details: name, birthday, location, and languages"
-      width="280"
-    />
+    <picture>
+      <img
+        src="./data/personal.svg"
+        alt="Personal details: name, birthday, location, and languages"
+        width="280"
+      />
+    </picture>
   </p>
 </details>
 
 <details>
   <summary>
-    <img
-      src="./data/interests-title.svg"
-      alt="Interests / Hobbies"
-      width="220"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/interests-title.svg"
+        alt="Interests / Hobbies"
+        width="220"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
-    <img
-      src="./data/interests.svg"
-      alt="Interests and hobbies: gaming, modding, archiving, programming, exploring new things, and psychology"
-      width="280"
-    />
+    <picture>
+      <img
+        src="./data/interests.svg"
+        alt="Interests and hobbies: gaming, modding, archiving, programming, exploring new things, and psychology"
+        width="280"
+      />
+    </picture>
   </p>
 </details>
 
 <details>
   <summary>
-    <img
-      src="./data/skills-title.svg"
-      alt="Skills"
-      width="100"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/skills-title.svg"
+        alt="Skills"
+        width="100"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
-    <img
-      src="./data/skills.svg"
-      alt="Skills: fast learner, quickly understands different topics, good at problem-solving, creative thinker, and strong attention to detail"
-      width="280"
-    />
+    <picture>
+      <img
+        src="./data/skills.svg"
+        alt="Skills: fast learner, quickly understands different topics, good at problem-solving, creative thinker, and strong attention to detail"
+        width="280"
+      />
+    </picture>
   </p>
 </details>
 
 <details>
   <summary>
-    <img
-      src="./data/links-title.svg"
-      alt="Links"
-      width="100"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/links-title.svg"
+        alt="Links"
+        width="100"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
@@ -132,33 +150,39 @@
 
 <details>
   <summary>
-    <img
-      src="./data/specs-title.svg"
-      alt="PC Specs"
-      width="132"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/specs-title.svg"
+        alt="PC Specs"
+        width="132"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
-    <img
-      src="./data/specs.svg"
-      alt="PC specifications: CPU, GPU, RAM, and monitor"
-      width="280"
-    />
+    <picture>
+      <img
+        src="./data/specs.svg"
+        alt="PC specifications: CPU, GPU, RAM, and monitor"
+        width="280"
+      />
+    </picture>
   </p>
 </details>
 
 <details>
   <summary>
-    <img
-      src="./data/translate-title.svg"
-      alt="Help Translate"
-      width="180"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/translate-title.svg"
+        alt="Help Translate"
+        width="180"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
@@ -178,13 +202,15 @@
 
 <details>
   <summary>
-    <img
-      src="./data/stats/title.svg"
-      alt="Stats"
-      width="100"
-      height="28"
-      align="center"
-    />
+    <picture>
+      <img
+        src="./data/stats/title.svg"
+        alt="Stats"
+        width="100"
+        height="28"
+        align="center"
+      />
+    </picture>
   </summary>
 
   <p align="center">
@@ -197,49 +223,65 @@
   </p>
 
   <p align="center">
-    <img
-      src="./data/stats/profile.svg"
-      alt="Master3307 (MrKoby07)"
-    />
+    <picture>
+      <img
+        src="./data/stats/profile.svg"
+        alt="Master3307 (MrKoby07)"
+      />
+    </picture>
     <br />
-    <img
-      src="./data/stats/repos.svg"
-      alt="Top Languages by Repo"
-    />
-    <img
-      src="./data/stats/commits.svg"
-      alt="Top Languages by Commit"
-    />
+    <picture>
+      <img
+        src="./data/stats/repos.svg"
+        alt="Top Languages by Repo"
+      />
+    </picture>
+    <picture>
+      <img
+        src="./data/stats/commits.svg"
+        alt="Top Languages by Commit"
+      />
+    </picture>
     <br />
-    <img
-      src="./data/stats/stats.svg"
-      alt="Stats"
-    />
-    <img
-      src="./data/stats/time.svg"
-      alt="Commits (UTC+2.00)"
-    />
+    <picture>
+      <img
+        src="./data/stats/stats.svg"
+        alt="Stats"
+      />
+    </picture>
+    <picture>
+      <img
+        src="./data/stats/time.svg"
+        alt="Commits (UTC+2.00)"
+      />
+    </picture>
   </p>
 
   <p align="center">
-    <img
-      src="./data/stats/recent.svg"
-      alt="Recent GitHub contributions, WakaTime coding activity, and public projects"
-    />
+    <picture>
+      <img
+        src="./data/stats/recent.svg"
+        alt="Recent GitHub contributions, WakaTime coding activity, and public projects"
+      />
+    </picture>
   </p>
 
   <p align="center">
-    <img
-      src="./data/stats/updated.svg"
-      alt="Last profile generation date and time"
-    />
+    <picture>
+      <img
+        src="./data/stats/updated.svg"
+        alt="Last profile generation date and time"
+      />
+    </picture>
   </p>
 </details>
 
 <p align="center">
-  <img
-    src="./data/footer.svg"
-    alt=""
-    width="690"
-  />
+  <picture>
+    <img
+      src="./data/footer.svg"
+      alt="Feel free to explore some of my repositories. :3"
+      width="690"
+    />
+  </picture>
 </p>
