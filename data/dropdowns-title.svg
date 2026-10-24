@@ -10,7 +10,6 @@
   </title>
 
   <defs>
-    <!-- Fade the separator into the transparent background. -->
     <linearGradient id="wave-fade" x1="0%" x2="100%">
       <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
       <stop offset="12%" stop-color="#fff" stop-opacity=".7"/>
@@ -23,37 +22,33 @@
     <mask
       id="wave-mask"
       maskUnits="userSpaceOnUse"
-      x="24"
+      x="72"
       y="48"
-      width="672"
+      width="576"
       height="36">
       <rect
-        x="24"
+        x="72"
         y="48"
-        width="672"
+        width="576"
         height="36"
         fill="url(#wave-fade)"/>
     </mask>
 
-    <!--
-      Each pattern repeats every 224 units.
-      Moving by exactly one period makes the animation seamless.
-    -->
     <path
       id="wave-pattern"
       d="
         M-424 66
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
-        q56-14 112 0
+        q56-8 112 0
         t112 0
       "/>
   </defs>
@@ -127,14 +122,12 @@
 
   <g class="separator">
     <g mask="url(#wave-mask)">
-      <!-- A broader, quieter wave behind the pink wave. -->
       <g transform="translate(0 16.5) scale(1 .75)">
         <use
           href="#wave-pattern"
           class="wave wave-back"/>
       </g>
 
-      <!-- The foreground wave flows in the opposite direction. -->
       <use
         href="#wave-pattern"
         class="wave wave-front"/>
