@@ -1,38 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-  width="720"
-  height="75"
-  viewBox="0 0 720 75"
-  role="img"
-  aria-labelledby="title">
-  <title id="title">
-    Last updated: 24. Oktober 2026・02:57:41 CEST・Europe/Berlin
-  </title>
-  <style>
-    text {
-      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
-      text-anchor: middle;
-      font-weight: 400;
-    }
-  </style>
-  <text
-    x="360"
-    y="23"
-    fill="#dc8add"
-    font-size="15">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="75" aria-labelledby="title" viewBox="0 0 720 75"><title id="title">
+    Last updated: 24. Oktober 2026・03:10:08 CEST・Europe/Berlin
+  </title><style>text{font-family:&quot;Segoe UI&quot;,Ubuntu,Arial,sans-serif;text-anchor:middle;font-weight:400}</style><text x="360" y="23" fill="#dc8add" font-size="15">
     Last updated
-  </text>
-  <text
-    x="360"
-    y="47"
-    fill="#8e58d4"
-    font-size="15">
-    24. Oktober 2026・02:57:41 CEST
-  </text>
-  <text
-    x="360"
-    y="65"
-    fill="#8e58d4"
-    font-size="11">
+  </text><text x="360" y="47" fill="#8e58d4" font-size="15">
+    24. Oktober 2026・03:10:08 CEST
+  </text><text x="360" y="65" fill="#8e58d4" font-size="11">
     Europe/Berlin
-  </text>
-</svg>
+  </text></svg>
