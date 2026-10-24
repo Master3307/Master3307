@@ -26,32 +26,17 @@
   />
 </p>
 
-<div align="center">
-
-<table align="center">
-<tr>
-<td align="left" width="400">
-
-<!--
-<p align="center">
-  <img
-    src="./data/dropdown-spacer.svg"
-    alt=""
-    width="380"
-    height="1"
-  />
-</p>
--->
-
 <details>
 <summary>
-  <img
-    src="./data/personal-title.svg"
-    alt="Personal"
-    width="132"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/personal-title.svg"
+      alt="Personal"
+      width="132"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -66,13 +51,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/interests-title.svg"
-    alt="Interests / Hobbies"
-    width="220"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/interests-title.svg"
+      alt="Interests / Hobbies"
+      width="220"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -87,13 +74,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/skills-title.svg"
-    alt="Skills"
-    width="100"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/skills-title.svg"
+      alt="Skills"
+      width="100"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -108,13 +97,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/links-title.svg"
-    alt="Links"
-    width="100"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/links-title.svg"
+      alt="Links"
+      width="100"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -147,13 +138,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/specs-title.svg"
-    alt="PC Specs"
-    width="132"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/specs-title.svg"
+      alt="PC Specs"
+      width="132"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -168,13 +161,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/translate-title.svg"
-    alt="Help Translate"
-    width="180"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/translate-title.svg"
+      alt="Help Translate"
+      width="180"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -197,13 +192,15 @@
 
 <details>
 <summary>
-  <img
-    src="./data/stats/title.svg"
-    alt="Stats"
-    width="100"
-    height="28"
-    align="center"
-  />
+  <picture>
+    <img
+      src="./data/stats/title.svg"
+      alt="Stats"
+      width="100"
+      height="28"
+      align="center"
+    />
+  </picture>
 </summary>
 
 <p align="center">
@@ -250,14 +247,4 @@
 <p align="center">
   <img
     src="./data/stats/updated.svg"
-    alt="Last profile generation date and time in Europe/Berlin"
-  />
-</p>
-
-</details>
-
-</td>
-</tr>
-</table>
-
-</div>
+    alt="Last profile generation date and
