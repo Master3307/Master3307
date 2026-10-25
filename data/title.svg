@@ -112,11 +112,22 @@
                    "Noto Color Emoji", sans-serif;
     }
 
-    /* Pivot at the bottom of the hand, near the wrist. */
+    /* Fixed space around the hand, independent of its rotation. */
+    .hand-box {
+      overflow: visible;
+    }
+
+    /*
+      Use the explicit 48 × 48 viewport rather than the emoji's
+      font-dependent bounding box. The wrist stays at (24, 40).
+    */
     .waving-hand {
-      transform-box: fill-box;
-      transform-origin: 50% 100%;
-      animation: gentle-wave 5.6s ease-in-out .480s infinite both;
+      transform-box: view-box;
+      transform-origin: 24px 40px;
+
+      animation:
+        wave-intro 2.9s cubic-bezier(.37, 0, .63, 1) .480s 1 backwards,
+        wave-idle 5.6s cubic-bezier(.37, 0, .63, 1) 4.8s infinite;
     }
 
     .name {
@@ -167,23 +178,64 @@
       }
     }
 
-    /* Small side-to-side wrist motion, followed by a short rest. */
-    @keyframes gentle-wave {
+    /* Strong greeting: plays only once when the hand appears. */
+    @keyframes wave-intro {
       0% {
         transform: rotate(0deg);
       }
-      15% {
-        transform: rotate(4deg);
+      8% {
+        transform: rotate(-8deg);
       }
-      35% {
-        transform: rotate(-4deg);
+      20% {
+        transform: rotate(18deg);
       }
-      55% {
+      32% {
+        transform: rotate(-12deg);
+      }
+      44% {
+        transform: rotate(15deg);
+      }
+      56% {
+        transform: rotate(-9deg);
+      }
+      68% {
+        transform: rotate(10deg);
+      }
+      80% {
+        transform: rotate(-5deg);
+      }
+      90% {
         transform: rotate(3deg);
       }
-      75% {
+      100% {
         transform: rotate(0deg);
       }
+    }
+
+    /* Subsequent greetings: subtle wrist motion with a long rest. */
+    @keyframes wave-idle {
+      0% {
+        transform: rotate(0deg);
+      }
+      7% {
+        transform: rotate(-2deg);
+      }
+      15% {
+        transform: rotate(5deg);
+      }
+      23% {
+        transform: rotate(-3.5deg);
+      }
+      31% {
+        transform: rotate(4deg);
+      }
+      39% {
+        transform: rotate(-2deg);
+      }
+      47% {
+        transform: rotate(1.5deg);
+      }
+      55%,
       100% {
         transform: rotate(0deg);
       }
@@ -263,30 +315,48 @@
   </style>
 
   <!--
-    The heading is split into three parts so the hand can rotate
-    around its own wrist without affecting the surrounding text.
+    The text has additional spacing on either side of the hand.
     Keep each text element's contents on one line.
   -->
   <g class="animated-heading" aria-hidden="true">
 
-    <text x="294" y="46" class="greeting greeting-left" xml:space="preserve"><tspan>J<set attributeName="visibility" to="hidden" begin="0s" dur=".100s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".135s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".170s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur=".205s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".240s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".275s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur=".310s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur=".345s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan></text>
+    <text x="288" y="46" class="greeting greeting-left" xml:space="preserve"><tspan>J<set attributeName="visibility" to="hidden" begin="0s" dur=".100s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".135s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".170s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur=".205s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".240s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".275s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur=".310s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur=".345s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan></text>
 
-    <!-- Positioning stays on the outer group; only the inner group waves. -->
-    <g transform="translate(316 46)">
+    <!--
+      Invisible 48 × 48 hand box.
+      Emoji baseline remains at the original global position (316, 46).
+      Only the inner group rotates; the box stays stationary.
+    -->
+    <svg
+      class="hand-box"
+      x="292"
+      y="8"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48">
+
+      <rect
+        x="0"
+        y="0"
+        width="48"
+        height="48"
+        fill="none"
+        pointer-events="none"/>
+
       <g class="waving-hand">
-        <text x="0" y="0" class="greeting hand">👋<set attributeName="visibility" to="hidden" begin="0s" dur=".480s"/></text>
+        <text x="24" y="38" class="greeting hand">👋<set attributeName="visibility" to="hidden" begin="0s" dur=".480s"/></text>
       </g>
-    </g>
+    </svg>
 
-    <text x="340" y="46" class="greeting greeting-right" xml:space="preserve"><tspan>I<set attributeName="visibility" to="hidden" begin="0s" dur=".550s"/></tspan><tspan>'<set attributeName="visibility" to="hidden" begin="0s" dur=".585s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur=".620s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".655s"/></tspan><tspan class="name"><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".780s"/><animate attributeName="rotate" values="-9;3;0" begin=".780s" dur=".45s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".835s"/><animate attributeName="rotate" values="8;-3;0" begin=".835s" dur=".45s"/></tspan><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur=".890s"/><animate attributeName="rotate" values="-9;3;0" begin=".890s" dur=".45s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".945s"/><animate attributeName="rotate" values="8;-3;0" begin=".945s" dur=".45s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur="1.000s"/><animate attributeName="rotate" values="-9;3;0" begin="1.000s" dur=".45s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.055s"/><animate attributeName="rotate" values="8;-3;0" begin="1.055s" dur=".45s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.110s"/><animate attributeName="rotate" values="-9;3;0" begin="1.110s" dur=".45s"/></tspan><tspan>7<set attributeName="visibility" to="hidden" begin="0s" dur="1.165s"/><animate attributeName="rotate" values="8;-3;0" begin="1.165s" dur=".45s"/></tspan></tspan><tspan>!<set attributeName="visibility" to="hidden" begin="0s" dur="1.270s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.305s"/></tspan><tspan>:<set attributeName="visibility" to="hidden" begin="0s" dur="1.340s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.375s"/></tspan></text>
+    <text x="346" y="46" class="greeting greeting-right" xml:space="preserve"><tspan>I<set attributeName="visibility" to="hidden" begin="0s" dur=".550s"/></tspan><tspan>'<set attributeName="visibility" to="hidden" begin="0s" dur=".585s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur=".620s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".655s"/></tspan><tspan class="name"><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".780s"/><animate attributeName="rotate" values="-9;3;0" begin=".780s" dur=".45s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".835s"/><animate attributeName="rotate" values="8;-3;0" begin=".835s" dur=".45s"/></tspan><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur=".890s"/><animate attributeName="rotate" values="-9;3;0" begin=".890s" dur=".45s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".945s"/><animate attributeName="rotate" values="8;-3;0" begin=".945s" dur=".45s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur="1.000s"/><animate attributeName="rotate" values="-9;3;0" begin="1.000s" dur=".45s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.055s"/><animate attributeName="rotate" values="8;-3;0" begin="1.055s" dur=".45s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.110s"/><animate attributeName="rotate" values="-9;3;0" begin="1.110s" dur=".45s"/></tspan><tspan>7<set attributeName="visibility" to="hidden" begin="0s" dur="1.165s"/><animate attributeName="rotate" values="8;-3;0" begin="1.165s" dur=".45s"/></tspan></tspan><tspan>!<set attributeName="visibility" to="hidden" begin="0s" dur="1.270s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.305s"/></tspan><tspan>:<set attributeName="visibility" to="hidden" begin="0s" dur="1.340s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.375s"/></tspan></text>
 
   </g>
 
   <!-- Matching layout without motion. -->
   <g class="static-heading" aria-hidden="true">
-    <text x="294" y="46" class="greeting greeting-left">Ja Servus</text>
+    <text x="288" y="46" class="greeting greeting-left">Ja Servus</text>
     <text x="316" y="46" class="greeting hand">👋</text>
-    <text x="340" y="46" class="greeting greeting-right" xml:space="preserve">I'm <tspan class="name">MrKoby07</tspan>! :D</text>
+    <text x="346" y="46" class="greeting greeting-right" xml:space="preserve">I'm <tspan class="name">MrKoby07</tspan>! :D</text>
   </g>
 
   <g aria-hidden="true">
