@@ -106,6 +106,7 @@
 
     .value {
       font-size: 14px;
+      fill: #c49be8;
     }
 
     .icon {

@@ -122,7 +122,7 @@
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       font-size: 14px;
       font-weight: 400;
-      fill: #a566ff;
+      fill: #c49be8;
       white-space: pre;
     }
 
