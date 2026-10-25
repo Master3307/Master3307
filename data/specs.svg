@@ -18,6 +18,58 @@
   </desc>
 
   <defs>
+    <!-- Shine continues from each icon into its header label. -->
+    <linearGradient
+      id="label-shine"
+      gradientUnits="userSpaceOnUse"
+      x1="-40"
+      y1="0"
+      x2="0"
+      y2="0"
+      spreadMethod="pad">
+
+      <stop offset="0%" stop-color="#a566ff"/>
+      <stop offset="28%" stop-color="#a566ff"/>
+      <stop offset="50%" stop-color="#bd8aff"/>
+      <stop offset="72%" stop-color="#a566ff"/>
+      <stop offset="100%" stop-color="#a566ff"/>
+
+      <animateTransform
+        attributeName="gradientTransform"
+        type="translate"
+        values="0 0; 240 0; 240 0"
+        keyTimes="0; 0.5; 1"
+        begin="3.8s"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Compensates for the icons' 26px horizontal translation. -->
+    <linearGradient
+      id="icon-shine"
+      gradientUnits="userSpaceOnUse"
+      x1="-66"
+      y1="0"
+      x2="-26"
+      y2="0"
+      spreadMethod="pad">
+
+      <stop offset="0%" stop-color="#a566ff"/>
+      <stop offset="28%" stop-color="#a566ff"/>
+      <stop offset="50%" stop-color="#bd8aff"/>
+      <stop offset="72%" stop-color="#a566ff"/>
+      <stop offset="100%" stop-color="#a566ff"/>
+
+      <animateTransform
+        attributeName="gradientTransform"
+        type="translate"
+        values="0 0; 240 0; 240 0"
+        keyTimes="0; 0.5; 1"
+        begin="3.8s"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </linearGradient>
+
     <linearGradient id="divider-shimmer" x1="0%" x2="100%">
       <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
       <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
@@ -70,18 +122,18 @@
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       font-size: 14px;
       font-weight: 400;
-      fill: #8e58d4;
+      fill: #a566ff;
       white-space: pre;
     }
 
     .label {
       font-weight: 600;
-      fill: #dc8add;
+      fill: url(#label-shine);
     }
 
     .icon {
       fill: none;
-      stroke: #dc8add;
+      stroke: url(#icon-shine);
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -169,6 +221,14 @@
         visibility: visible !important;
       }
 
+      .label {
+        fill: #a566ff;
+      }
+
+      .icon {
+        stroke: #a566ff;
+      }
+
       .icon .draw,
       .icon-pulse,
       .divider {
@@ -233,36 +293,31 @@
     </g>
   </g>
 
-  <!-- GPU -->
+  <!-- GPU: simplified fan and card connector -->
   <g class="row row-2" transform="translate(0 54)">
     <g class="icon" transform="translate(26 23)" aria-hidden="true">
       <g class="icon-pulse">
         <rect
           class="draw"
           pathLength="1"
-          x="2" y="6"
-          width="24" height="16"
+          x="3" y="6"
+          width="23" height="15"
           rx="2"/>
 
         <circle
           class="draw detail"
           pathLength="1"
-          cx="11" cy="14" r="5"/>
-
-        <circle
-          class="draw detail"
-          pathLength="1"
-          cx="11" cy="14" r="1"/>
+          cx="12" cy="13.5" r="4.5"/>
 
         <path
           class="draw detail"
           pathLength="1"
           d="
-            M11 9v3 M16 14h-3
-            M11 19v-3 M6 14h3
-            M21 10v8
-            M6 22v3h12v-3
-            M2 6V3H0
+            M12 9v9
+            M7.5 13.5h9
+            M21 10v7
+            M8 21v3h10v-3
+            M3 6V3H1
           "/>
       </g>
     </g>
@@ -325,7 +380,7 @@
     </g>
   </g>
 
-  <!-- Motherboard -->
+  <!-- Motherboard: socket, memory slots, and expansion slot -->
   <g class="row row-4" transform="translate(0 162)">
     <g class="icon" transform="translate(26 23)" aria-hidden="true">
       <g class="icon-pulse">
@@ -334,19 +389,23 @@
           pathLength="1"
           x="2" y="2"
           width="24" height="24"
-          rx="2"/>
+          rx="2.5"/>
 
         <rect
           class="draw detail"
           pathLength="1"
-          x="7" y="7"
+          x="6" y="6"
           width="9" height="9"
-          rx="1"/>
+          rx="1.5"/>
 
         <path
           class="draw detail"
           pathLength="1"
-          d="M20 6v10 M23 6v10 M6 21h16 M6 24h10"/>
+          d="
+            M20 6v10
+            M23 6v10
+            M6 21h16
+          "/>
       </g>
     </g>
 
@@ -364,21 +423,21 @@
     </g>
   </g>
 
-  <!-- Displays -->
+  <!-- Displays: simple monitor without an internal line -->
   <g class="row row-5" transform="translate(0 216)">
     <g class="icon" transform="translate(26 23)" aria-hidden="true">
       <g class="icon-pulse">
         <rect
           class="draw"
           pathLength="1"
-          x="1" y="2"
-          width="26" height="18"
+          x="2" y="4"
+          width="24" height="16"
           rx="2"/>
 
         <path
           class="draw detail"
           pathLength="1"
-          d="M1 16h26 M14 20v5 M8 26h12"/>
+          d="M14 20v5 M8 25h12"/>
       </g>
     </g>
 
@@ -396,7 +455,7 @@
     </g>
   </g>
 
-  <!-- Operating system -->
+  <!-- Operating system: terminal window -->
   <g class="row row-6" transform="translate(0 270)">
     <g class="icon" transform="translate(26 23)" aria-hidden="true">
       <g class="icon-pulse">
@@ -433,7 +492,7 @@
     </g>
   </g>
 
-  <!-- Desktop -->
+  <!-- Desktop: clean workspace with a panel and window -->
   <g class="row row-7" transform="translate(0 324)">
     <g class="icon" transform="translate(26 23)" aria-hidden="true">
       <g class="icon-pulse">
@@ -444,10 +503,17 @@
           width="24" height="22"
           rx="3"/>
 
+        <rect
+          class="draw detail"
+          pathLength="1"
+          x="7" y="7"
+          width="14" height="10"
+          rx="1.5"/>
+
         <path
           class="draw detail"
           pathLength="1"
-          d="M2 9h24 M10 9v16 M10 18h16"/>
+          d="M2 21h24"/>
       </g>
     </g>
 
