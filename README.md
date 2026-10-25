@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://home.master3307.org/card">
     <img
-      src="./data/header.svg"
+      src="./data/title.svg"
       alt="Ja Servus 👋 I'm MrKoby07! :D"
       width="690"
     />
