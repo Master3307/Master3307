@@ -63,6 +63,17 @@
       stroke-linejoin: round;
     }
 
+    .home-logo {
+      fill: #a566ff;
+      fill: url(#icon-shine);
+      fill-rule: evenodd;
+      stroke: none;
+    }
+
+    .home-reveal {
+      animation: reveal-home 1.1s cubic-bezier(.45, 0, .25, 1) both;
+    }
+
     .draw {
       stroke-dasharray: 1;
       animation: draw-icon 1.1s cubic-bezier(.45, 0, .25, 1) both;
@@ -108,6 +119,11 @@
       }
     }
 
+    @keyframes reveal-home {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     @keyframes draw-divider {
       from { stroke-dashoffset: 1; }
       to { stroke-dashoffset: 0; }
@@ -141,7 +157,12 @@
         stroke: #a566ff;
       }
 
+      .home-logo {
+        fill: #a566ff;
+      }
+
       .draw,
+      .home-reveal,
       .icon-pulse,
       .divider {
         animation: none;
@@ -159,17 +180,38 @@
     }
   </style>
 
-  <g class="icon"
-    transform="translate(26 12)"
-    aria-hidden="true">
+  <g transform="translate(26 12)" aria-hidden="true">
     <g class="icon-pulse">
-      <path
-        class="draw"
-        pathLength="1"
-        d="
-          M2 13 14 3l12 10
-          M5 11v15h18V11
-          M11 26V16h6v10"/>
+      <g class="home-reveal">
+        <path
+          class="home-logo"
+          d="
+            M13.15 0.25
+            Q14 -0.1 14.85 0.25
+            L26.85 5.3
+            Q28 5.8 28 7.15
+            V29
+            Q28 30.3 26.7 30.3
+            H1.3
+            Q0 30.3 0 29
+            V7.15
+            Q0 5.8 1.15 5.3
+            Z
+
+            M5.7 8.25
+            H11.05
+            V15.2
+            H16.95
+            V8.25
+            H22.3
+            V26.9
+            H16.95
+            V20
+            H11.05
+            V26.9
+            H5.7
+            Z"/>
+      </g>
     </g>
   </g>
 
