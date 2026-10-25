@@ -216,21 +216,31 @@
 
     <text x="286" y="46" class="greeting greeting-left" xml:space="preserve"><tspan>J<set attributeName="visibility" to="hidden" begin="0s" dur=".100s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".135s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".170s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur=".205s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".240s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".275s"/></tspan><tspan>v<set attributeName="visibility" to="hidden" begin="0s" dur=".310s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur=".345s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan></text>
 
-    <!--
-      Hand group: Low anchor pivot at (316, 48) near the true wrist base.
-      First strong wave executes cleanly, then gives way to the gentle wave.
-    -->
+    <!-- Continuous single-loop waving hand anchored at (316, 48) -->
     <g>
-      <!-- Phase 1: Strong intro wave -->
       <animateTransform
-        id="intro-wave"
         attributeName="transform"
         type="rotate"
         begin=".480s"
-        dur="2.4s"
-        fill="freeze"
+        dur="10.0s"
+        repeatCount="indefinite"
         calcMode="spline"
-        keyTimes="0; 0.12; 0.28; 0.44; 0.60; 0.76; 0.90; 1"
+        keyTimes="
+          0;
+          0.024;
+          0.056;
+          0.092;
+          0.132;
+          0.176;
+          0.220;
+          0.260;
+          0.500;
+          0.528;
+          0.564;
+          0.604;
+          0.648;
+          0.700;
+          1"
         keySplines="
           .42 0 .58 1;
           .42 0 .58 1;
@@ -238,7 +248,14 @@
           .42 0 .58 1;
           .42 0 .58 1;
           .42 0 .58 1;
-          .42 0 .58 1"
+          .42 0 .58 1;
+          0 0 1 1;
+          .42 0 .58 1;
+          .42 0 .58 1;
+          .42 0 .58 1;
+          .42 0 .58 1;
+          .42 0 .58 1;
+          0 0 1 1"
         values="
           0 316 48;
           -8 316 48;
@@ -247,28 +264,12 @@
           10 316 48;
           -6 316 48;
           4 316 48;
-          0 316 48"/>
-
-      <!-- Phase 2: Gentle, subtle idle wave loop -->
-      <animateTransform
-        attributeName="transform"
-        type="rotate"
-        begin="intro-wave.end + 2s"
-        dur="4.8s"
-        repeatCount="indefinite"
-        calcMode="spline"
-        keyTimes="0; 0.12; 0.28; 0.44; 0.60; 1"
-        keySplines="
-          .42 0 .58 1;
-          .42 0 .58 1;
-          .42 0 .58 1;
-          .42 0 .58 1;
-          0 0 1 1"
-        values="
+          0 316 48;
           0 316 48;
           -3 316 48;
           5 316 48;
           -3 316 48;
+          3 316 48;
           0 316 48;
           0 316 48"/>
 
