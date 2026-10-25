@@ -12,13 +12,13 @@
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       font-size: 18px;
       font-weight: 400;
-      fill: #dc8add;
+      fill: #a566ff;
       white-space: pre;
     }
 
     .icon {
       fill: none;
-      stroke: #dc8add;
+      stroke: #a566ff;
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;

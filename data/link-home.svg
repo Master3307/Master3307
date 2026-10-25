@@ -8,6 +8,31 @@
   <title id="home-link-title">HomeSite</title>
 
   <defs>
+    <linearGradient
+      id="icon-shine"
+      gradientUnits="userSpaceOnUse"
+      x1="-28"
+      y1="0"
+      x2="0"
+      y2="0"
+      spreadMethod="pad">
+
+      <stop offset="0%" stop-color="#a566ff"/>
+      <stop offset="28%" stop-color="#a566ff"/>
+      <stop offset="50%" stop-color="#bd8aff"/>
+      <stop offset="72%" stop-color="#a566ff"/>
+      <stop offset="100%" stop-color="#a566ff"/>
+
+      <animateTransform
+        attributeName="gradientTransform"
+        type="translate"
+        values="0 0; 64 0; 64 0"
+        keyTimes="0; 0.32; 1"
+        begin="2.8s"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </linearGradient>
+
     <linearGradient id="divider-shimmer" x1="0%" x2="100%">
       <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
       <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
@@ -26,13 +51,13 @@
       font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
       font-size: 14px;
       font-weight: 400;
-      fill: #8e58d4;
+      fill: #a566ff;
       white-space: pre;
     }
 
     .icon {
       fill: none;
-      stroke: #dc8add;
+      stroke: url(#icon-shine);
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -110,6 +135,10 @@
     @media (prefers-reduced-motion: reduce) {
       text tspan {
         visibility: visible !important;
+      }
+
+      .icon {
+        stroke: #a566ff;
       }
 
       .draw,

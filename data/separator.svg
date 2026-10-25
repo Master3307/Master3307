@@ -97,7 +97,7 @@
     }
 
     .wave-front {
-      stroke: #dc8add;
+      stroke: #a566ff;
       stroke-width: 1.6;
       opacity: .9;
       animation: flow-left 7s linear infinite;
@@ -130,7 +130,7 @@
       }
     }
   </style>
-  
+
   <g mask="url(#wave-mask)">
     <g clip-path="url(#back-reveal)">
       <g transform="translate(0 6) scale(1 .75)">

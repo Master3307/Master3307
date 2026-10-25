@@ -211,6 +211,18 @@
     }
   </style>
 
+  <!-- Centered, slightly transparent background behind the heading -->
+  <rect
+    x="104"
+    y="7"
+    width="512"
+    height="58"
+    rx="13"
+    ry="13"
+    fill="#0D1117"
+    fill-opacity="0.92"
+    aria-hidden="true"/>
+
   <!-- Animated Heading -->
   <g class="animated-heading" aria-hidden="true">
 
