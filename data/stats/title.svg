@@ -1,1 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="28" aria-labelledby="stats-heading-title" viewBox="0 0 100 28"><title id="stats-heading-title">Stats</title><style>@keyframes draw-icon{0%{stroke-dashoffset:1;opacity:0}10%{opacity:1}to{stroke-dashoffset:0;opacity:1}}@keyframes breathe{0%,to{opacity:1}50%{opacity:.65}}.icon .draw{stroke-dasharray:1;animation:draw-icon 1.1s cubic-bezier(.45,0,.25,1) both}@media (prefers-reduced-motion:reduce){.icon .draw{animation:none;stroke-dasharray:none}}</style><g aria-hidden="true" class="icon" style="fill:none;stroke:#dc8add;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><g style="animation:breathe 6s ease-in-out 1.6s infinite"><path d="M2 3v22h25" class="draw" pathLength="1"/><rect width="4" height="10" x="6" y="15" class="draw" rx="1" style="animation-delay:.12s"/><rect width="4" height="15" x="13" y="10" class="draw" rx="1" style="animation-delay:.24s"/><rect width="4" height="20" x="20" y="5" class="draw" rx="1" style="animation-delay:.36s"/></g></g><text xml:space="preserve" x="36" y="20" style="fill:#dc8add;font-family:&quot;Segoe UI&quot;,Ubuntu,Arial,sans-serif;font-size:18px;font-weight:400;white-space:pre"><tspan>S<set attributeName="visibility" begin="0s" dur=".200s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur=".235s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur=".270s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur=".305s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur=".340s" to="hidden"/></tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="28"
+  viewBox="0 0 100 28"
+  role="img"
+  aria-labelledby="stats-heading-title">
+
+  <title id="stats-heading-title">Stats</title>
+
+  <style>
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon .draw {
+      stroke-dasharray: 1;
+      animation: draw-icon 1.1s cubic-bezier(.45, 0, .25, 1) both;
+    }
+
+    .icon .bar-1 {
+      animation-delay: .12s;
+    }
+
+    .icon .bar-2 {
+      animation-delay: .24s;
+    }
+
+    .icon .bar-3 {
+      animation-delay: .36s;
+    }
+
+    .icon-pulse {
+      animation: breathe 6s ease-in-out 1.6s infinite;
+    }
+
+    .heading {
+      fill: #dc8add;
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      white-space: pre;
+    }
+
+    @keyframes draw-icon {
+      from {
+        stroke-dashoffset: 1;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .65;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .heading tspan {
+        visibility: visible !important;
+      }
+
+      .icon .draw,
+      .icon-pulse {
+        animation: none;
+      }
+
+      .icon .draw {
+        stroke-dasharray: none;
+      }
+    }
+  </style>
+
+  <g class="icon" aria-hidden="true">
+    <g class="icon-pulse">
+      <path
+        class="draw"
+        pathLength="1"
+        d="M2 3v22h25"/>
+
+      <rect
+        class="draw bar-1"
+        pathLength="1"
+        x="6"
+        y="15"
+        width="4"
+        height="10"
+        rx="1"/>
+
+      <rect
+        class="draw bar-2"
+        pathLength="1"
+        x="13"
+        y="10"
+        width="4"
+        height="15"
+        rx="1"/>
+
+      <rect
+        class="draw bar-3"
+        pathLength="1"
+        x="20"
+        y="5"
+        width="4"
+        height="20"
+        rx="1"/>
+    </g>
+  </g>
+
+  <!-- Keep the text on one line to preserve natural spacing. -->
+  <text x="36" y="20" class="heading" xml:space="preserve"><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur=".200s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".235s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur=".270s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".305s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".340s"/></tspan></text>
+</svg>

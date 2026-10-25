@@ -1,1 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="48" aria-labelledby="separator-title" viewBox="0 0 720 48"><title id="separator-title">Animated double-wave separator</title><defs><clipPath id="back-reveal" clipPathUnits="userSpaceOnUse"><path d="M72 6h576v36H72z" class="reveal" style="animation-delay:.1s"/></clipPath><clipPath id="front-reveal" clipPathUnits="userSpaceOnUse"><path d="M72 6h576v36H72z" class="reveal" style="animation-delay:.35s"/></clipPath><linearGradient id="wave-fade" x1="0%" x2="100%"><stop offset="0%" stop-color="#fff" stop-opacity="0"/><stop offset="12%" stop-color="#fff" stop-opacity=".7"/><stop offset="30%" stop-color="#fff"/><stop offset="70%" stop-color="#fff"/><stop offset="88%" stop-color="#fff" stop-opacity=".7"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient><path id="wave-pattern" d="M-424 24q56-8 112 0t112 0 112 0 112 0 112 0 112 0 112 0 112 0 112 0 112 0 112 0 112 0"/><mask id="wave-mask" width="576" height="36" x="72" y="6" maskUnits="userSpaceOnUse"><path fill="url(#wave-fade)" d="M72 6h576v36H72z"/></mask></defs><style>@keyframes unfold{0%{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes flow-left{0%{transform:translateX(0)}to{transform:translateX(-224px)}}@keyframes flow-right{0%{transform:translateX(-224px)}to{transform:translateX(0)}}.reveal{transform-origin:360px 24px;animation:unfold 1.3s cubic-bezier(.65,0,.35,1) both}.wave{fill:none;stroke-linecap:round;stroke-linejoin:round}@media (prefers-reduced-motion:reduce){.reveal{animation:none}}</style><g mask="url(#wave-mask)"><g clip-path="url(#back-reveal)"><use class="wave" href="#wave-pattern" style="stroke:#8e58d4;stroke-width:1.5;opacity:.65;animation:flow-right 9s linear infinite" transform="matrix(1 0 0 .75 0 6)"/></g><g clip-path="url(#front-reveal)"><use class="wave" href="#wave-pattern" style="stroke:#dc8add;stroke-width:1.6;opacity:.9;animation:flow-left 7s linear infinite"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="720"
+  height="48"
+  viewBox="0 0 720 48"
+  role="img"
+  aria-labelledby="separator-title">
+
+  <title id="separator-title">Animated double-wave separator</title>
+
+  <defs>
+    <linearGradient id="wave-fade" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="12%" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset="30%" stop-color="#fff"/>
+      <stop offset="70%" stop-color="#fff"/>
+      <stop offset="88%" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+
+    <mask
+      id="wave-mask"
+      maskUnits="userSpaceOnUse"
+      x="72"
+      y="6"
+      width="576"
+      height="36">
+      <rect
+        x="72"
+        y="6"
+        width="576"
+        height="36"
+        fill="url(#wave-fade)"/>
+    </mask>
+
+    <clipPath id="back-reveal" clipPathUnits="userSpaceOnUse">
+      <rect
+        class="reveal reveal-back"
+        x="72"
+        y="6"
+        width="576"
+        height="36"/>
+    </clipPath>
+
+    <clipPath id="front-reveal" clipPathUnits="userSpaceOnUse">
+      <rect
+        class="reveal reveal-front"
+        x="72"
+        y="6"
+        width="576"
+        height="36"/>
+    </clipPath>
+
+    <path
+      id="wave-pattern"
+      d="
+        M-424 24
+        q56-8 112 0
+        t112 0
+        q56-8 112 0
+        t112 0
+        q56-8 112 0
+        t112 0
+        q56-8 112 0
+        t112 0
+        q56-8 112 0
+        t112 0
+        q56-8 112 0
+        t112 0
+      "/>
+  </defs>
+
+  <style>
+    .reveal {
+      transform-origin: 360px 24px;
+      animation: unfold 1.3s cubic-bezier(.65, 0, .35, 1) both;
+    }
+
+    .reveal-back {
+      animation-delay: .1s;
+    }
+
+    .reveal-front {
+      animation-delay: .35s;
+    }
+
+    .wave {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .wave-back {
+      stroke: #8e58d4;
+      stroke-width: 1.5;
+      opacity: .65;
+      animation: flow-right 9s linear infinite;
+    }
+
+    .wave-front {
+      stroke: #dc8add;
+      stroke-width: 1.6;
+      opacity: .9;
+      animation: flow-left 7s linear infinite;
+    }
+
+    @keyframes unfold {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @keyframes flow-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-224px); }
+    }
+
+    @keyframes flow-right {
+      from { transform: translateX(-224px); }
+      to { transform: translateX(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .wave-back,
+      .wave-front {
+        animation: none;
+      }
+
+      .wave-back {
+        transform: translateX(-56px);
+      }
+    }
+  </style>
+  
+  <g mask="url(#wave-mask)">
+    <g clip-path="url(#back-reveal)">
+      <g transform="translate(0 6) scale(1 .75)">
+        <use
+          href="#wave-pattern"
+          class="wave wave-back"/>
+      </g>
+    </g>
+
+    <g clip-path="url(#front-reveal)">
+      <use
+        href="#wave-pattern"
+        class="wave wave-front"/>
+    </g>
+  </g>
+</svg>

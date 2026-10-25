@@ -1,7 +1,458 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="402" aria-labelledby="specs-title specs-description" viewBox="0 0 840 402"><title id="specs-title">System specifications</title><desc id="specs-description">CPU: AMD Ryzen 5 5600X.
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="840"
+  height="402"
+  viewBox="0 0 840 402"
+  role="img"
+  aria-labelledby="specs-title specs-description">
+
+  <title id="specs-title">System specifications</title>
+
+  <desc id="specs-description">
+    CPU: AMD Ryzen 5 5600X.
     GPU: NVIDIA GeForce RTX 4060 AERO 8GB.
     RAM: Kingston Fury Beast 32GB (2x16GB) DDR4.
     Motherboard: Gigabyte B550M DS3H.
     Displays: two 1920x1080 displays; Samsung S22D300 at 60Hz.
     OS: CachyOS x86_64.
-    Desktop: KDE Plasma on Wayland, Breeze theme, Papirus-Dark icons.</desc><defs><linearGradient id="divider-shimmer" x1="0%" x2="100%"><stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/><stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/><stop offset="65%" stop-color="#b879d8" stop-opacity=".3"/><stop offset="85%" stop-color="#b879d8" stop-opacity=".18"/><stop offset="100%" stop-color="#8e58d4" stop-opacity="0"/></linearGradient><clipPath id="divider-clip" clipPathUnits="userSpaceOnUse"><path d="M72 66h752v4H72z"/></clipPath></defs><style>@keyframes draw-icon{0%{stroke-dashoffset:1;opacity:0}10%{opacity:1}to{stroke-dashoffset:0;opacity:1}}@keyframes draw-divider{0%{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes breathe{0%,to{opacity:1}50%{opacity:.65}}@keyframes sweep{0%{transform:translateX(0);opacity:0}12%,76%{opacity:.4}90%,to{transform:translateX(920px);opacity:0}}.row{--delay:0s;--shimmer-delay:4s}text{font-family:&quot;Segoe UI&quot;,Ubuntu,Arial,sans-serif;font-size:14px;font-weight:400;fill:#8e58d4;white-space:pre}.label{font-weight:600;fill:#dc8add}.icon{fill:none;stroke:#dc8add;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.icon .draw{stroke-dasharray:1;animation:draw-icon 1.1s cubic-bezier(.45,0,.25,1) both;animation-delay:var(--delay)}.icon .detail{animation-delay:calc(var(--delay) + .18s)}.icon-pulse{animation:breathe 6s ease-in-out infinite;animation-delay:calc(var(--delay) + 1.4s)}.divider{fill:none;stroke:#8e58d4;stroke-opacity:.16;stroke-dasharray:1;animation:draw-divider 1s cubic-bezier(.65,0,.35,1) both;animation-delay:calc(var(--delay) + .5s)}@media (prefers-reduced-motion:reduce){text tspan{visibility:visible!important}.divider,.icon .draw,.icon-pulse{animation:none}.divider,.icon .draw{stroke-dasharray:none}}</style><g class="row"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 23)"><rect width="18" height="18" x="5" y="5" class="draw" rx="3"/><rect width="8" height="8" x="10" y="10" class="draw detail" rx="1"/><path d="M9 1v4m5-4v4m5-4v4M9 23v4m5-4v4m5-4v4M1 9h4m-4 5h4m-4 5h4M23 9h4m-4 5h4m-4 5h4" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label"><tspan>C<set attributeName="visibility" begin="0s" dur=".200s" to="hidden"/></tspan><tspan>P<set attributeName="visibility" begin="0s" dur=".235s" to="hidden"/></tspan><tspan>U<set attributeName="visibility" begin="0s" dur=".270s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55"><tspan>A<set attributeName="visibility" begin="0s" dur=".345s" to="hidden"/></tspan><tspan>M<set attributeName="visibility" begin="0s" dur=".380s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur=".415s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur=".450s" to="hidden"/></tspan><tspan>R<set attributeName="visibility" begin="0s" dur=".485s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur=".520s" to="hidden"/></tspan><tspan>z<set attributeName="visibility" begin="0s" dur=".555s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur=".590s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur=".625s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur=".660s" to="hidden"/></tspan><tspan>5<set attributeName="visibility" begin="0s" dur=".695s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur=".730s" to="hidden"/></tspan><tspan>5<set attributeName="visibility" begin="0s" dur=".765s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur=".800s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur=".835s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur=".870s" to="hidden"/></tspan><tspan>X<set attributeName="visibility" begin="0s" dur=".905s" to="hidden"/></tspan></text><path d="M72 68h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:.22s;--shimmer-delay:6s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 77)"><rect width="24" height="16" x="2" y="6" class="draw" rx="2"/><circle cx="11" cy="14" r="5" class="draw detail"/><circle cx="11" cy="14" r="1" class="draw detail"/><path d="M11 9v3m5 2h-3m-2 5v-3m-5-2h3m12-4v8M6 22v3h12v-3M2 6V3H0" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 54)"><tspan>G<set attributeName="visibility" begin="0s" dur=".420s" to="hidden"/></tspan><tspan>P<set attributeName="visibility" begin="0s" dur=".455s" to="hidden"/></tspan><tspan>U<set attributeName="visibility" begin="0s" dur=".490s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 54)"><tspan>N<set attributeName="visibility" begin="0s" dur=".565s" to="hidden"/></tspan><tspan>V<set attributeName="visibility" begin="0s" dur=".600s" to="hidden"/></tspan><tspan>I<set attributeName="visibility" begin="0s" dur=".635s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur=".670s" to="hidden"/></tspan><tspan>I<set attributeName="visibility" begin="0s" dur=".705s" to="hidden"/></tspan><tspan>A<set attributeName="visibility" begin="0s" dur=".740s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur=".775s" to="hidden"/></tspan><tspan>G<set attributeName="visibility" begin="0s" dur=".810s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur=".845s" to="hidden"/></tspan><tspan>F<set attributeName="visibility" begin="0s" dur=".880s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur=".915s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur=".950s" to="hidden"/></tspan><tspan>c<set attributeName="visibility" begin="0s" dur=".985s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.020s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.055s" to="hidden"/></tspan><tspan>R<set attributeName="visibility" begin="0s" dur="1.090s" to="hidden"/></tspan><tspan>T<set attributeName="visibility" begin="0s" dur="1.125s" to="hidden"/></tspan><tspan>X<set attributeName="visibility" begin="0s" dur="1.160s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.195s" to="hidden"/></tspan><tspan>4<set attributeName="visibility" begin="0s" dur="1.230s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.265s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur="1.300s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.335s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.370s" to="hidden"/></tspan><tspan>A<set attributeName="visibility" begin="0s" dur="1.405s" to="hidden"/></tspan><tspan>E<set attributeName="visibility" begin="0s" dur="1.440s" to="hidden"/></tspan><tspan>R<set attributeName="visibility" begin="0s" dur="1.475s" to="hidden"/></tspan><tspan>O<set attributeName="visibility" begin="0s" dur="1.510s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.545s" to="hidden"/></tspan><tspan>8<set attributeName="visibility" begin="0s" dur="1.580s" to="hidden"/></tspan><tspan>G<set attributeName="visibility" begin="0s" dur="1.615s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="1.650s" to="hidden"/></tspan></text><path d="M72 122h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:.44s;--shimmer-delay:8s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 131)"><rect width="26" height="14" x="1" y="7" class="draw" rx="2"/><path d="M6 11h4v6H6zm6 0h4v6h-4zm6 0h4v6h-4zM5 21v4m4-4v4m4-4v2m4-2v4m4-4v4m4-4v4" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 108)"><tspan>R<set attributeName="visibility" begin="0s" dur=".640s" to="hidden"/></tspan><tspan>A<set attributeName="visibility" begin="0s" dur=".675s" to="hidden"/></tspan><tspan>M<set attributeName="visibility" begin="0s" dur=".710s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 108)"><tspan>K<set attributeName="visibility" begin="0s" dur=".785s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur=".820s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur=".855s" to="hidden"/></tspan><tspan>g<set attributeName="visibility" begin="0s" dur=".890s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur=".925s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur=".960s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur=".995s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur="1.030s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.065s" to="hidden"/></tspan><tspan>F<set attributeName="visibility" begin="0s" dur="1.100s" to="hidden"/></tspan><tspan>u<set attributeName="visibility" begin="0s" dur="1.135s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="1.170s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="1.205s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.240s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="1.275s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.310s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.345s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.380s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="1.415s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.450s" to="hidden"/></tspan><tspan>3<set attributeName="visibility" begin="0s" dur="1.485s" to="hidden"/></tspan><tspan>2<set attributeName="visibility" begin="0s" dur="1.520s" to="hidden"/></tspan><tspan>G<set attributeName="visibility" begin="0s" dur="1.555s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="1.590s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.625s" to="hidden"/></tspan><tspan>(<set attributeName="visibility" begin="0s" dur="1.660s" to="hidden"/></tspan><tspan>2<set attributeName="visibility" begin="0s" dur="1.695s" to="hidden"/></tspan><tspan>x<set attributeName="visibility" begin="0s" dur="1.730s" to="hidden"/></tspan><tspan>1<set attributeName="visibility" begin="0s" dur="1.765s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur="1.800s" to="hidden"/></tspan><tspan>G<set attributeName="visibility" begin="0s" dur="1.835s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="1.870s" to="hidden"/></tspan><tspan>)<set attributeName="visibility" begin="0s" dur="1.905s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.940s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="1.975s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="2.010s" to="hidden"/></tspan><tspan>R<set attributeName="visibility" begin="0s" dur="2.045s" to="hidden"/></tspan><tspan>4<set attributeName="visibility" begin="0s" dur="2.080s" to="hidden"/></tspan></text><path d="M72 176h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:.66s;--shimmer-delay:10s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 185)"><rect width="24" height="24" x="2" y="2" class="draw" rx="2"/><rect width="9" height="9" x="7" y="7" class="draw detail" rx="1"/><path d="M20 6v10m3-10v10M6 21h16M6 24h10" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 162)"><tspan>M<set attributeName="visibility" begin="0s" dur=".860s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur=".895s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur=".930s" to="hidden"/></tspan><tspan>h<set attributeName="visibility" begin="0s" dur=".965s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.000s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="1.035s" to="hidden"/></tspan><tspan>b<set attributeName="visibility" begin="0s" dur="1.070s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur="1.105s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.140s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="1.175s" to="hidden"/></tspan><tspan>d<set attributeName="visibility" begin="0s" dur="1.210s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 162)"><tspan>G<set attributeName="visibility" begin="0s" dur="1.285s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur="1.320s" to="hidden"/></tspan><tspan>g<set attributeName="visibility" begin="0s" dur="1.355s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.390s" to="hidden"/></tspan><tspan>b<set attributeName="visibility" begin="0s" dur="1.425s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="1.460s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="1.495s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.530s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.565s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="1.600s" to="hidden"/></tspan><tspan>5<set attributeName="visibility" begin="0s" dur="1.635s" to="hidden"/></tspan><tspan>5<set attributeName="visibility" begin="0s" dur="1.670s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.705s" to="hidden"/></tspan><tspan>M<set attributeName="visibility" begin="0s" dur="1.740s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.775s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="1.810s" to="hidden"/></tspan><tspan>S<set attributeName="visibility" begin="0s" dur="1.845s" to="hidden"/></tspan><tspan>3<set attributeName="visibility" begin="0s" dur="1.880s" to="hidden"/></tspan><tspan>H<set attributeName="visibility" begin="0s" dur="1.915s" to="hidden"/></tspan></text><path d="M72 230h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:.88s;--shimmer-delay:12s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 239)"><rect width="26" height="18" x="1" y="2" class="draw" rx="2"/><path d="M1 16h26m-13 4v5m-6 1h12" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 216)"><tspan>D<set attributeName="visibility" begin="0s" dur="1.080s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur="1.115s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.150s" to="hidden"/></tspan><tspan>p<set attributeName="visibility" begin="0s" dur="1.185s" to="hidden"/></tspan><tspan>l<set attributeName="visibility" begin="0s" dur="1.220s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.255s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="1.290s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.325s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 216)"><tspan>2<set attributeName="visibility" begin="0s" dur="1.400s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.435s" to="hidden"/></tspan><tspan>×<set attributeName="visibility" begin="0s" dur="1.470s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.505s" to="hidden"/></tspan><tspan>1<set attributeName="visibility" begin="0s" dur="1.540s" to="hidden"/></tspan><tspan>9<set attributeName="visibility" begin="0s" dur="1.575s" to="hidden"/></tspan><tspan>2<set attributeName="visibility" begin="0s" dur="1.610s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.645s" to="hidden"/></tspan><tspan>×<set attributeName="visibility" begin="0s" dur="1.680s" to="hidden"/></tspan><tspan>1<set attributeName="visibility" begin="0s" dur="1.715s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.750s" to="hidden"/></tspan><tspan>8<set attributeName="visibility" begin="0s" dur="1.785s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="1.820s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.855s" to="hidden"/></tspan><tspan>·<set attributeName="visibility" begin="0s" dur="1.890s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.925s" to="hidden"/></tspan><tspan>S<set attributeName="visibility" begin="0s" dur="1.960s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.995s" to="hidden"/></tspan><tspan>m<set attributeName="visibility" begin="0s" dur="2.030s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="2.065s" to="hidden"/></tspan><tspan>u<set attributeName="visibility" begin="0s" dur="2.100s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur="2.135s" to="hidden"/></tspan><tspan>g<set attributeName="visibility" begin="0s" dur="2.170s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.205s" to="hidden"/></tspan><tspan>S<set attributeName="visibility" begin="0s" dur="2.240s" to="hidden"/></tspan><tspan>2<set attributeName="visibility" begin="0s" dur="2.275s" to="hidden"/></tspan><tspan>2<set attributeName="visibility" begin="0s" dur="2.310s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="2.345s" to="hidden"/></tspan><tspan>3<set attributeName="visibility" begin="0s" dur="2.380s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="2.415s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="2.450s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.485s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.520s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="2.555s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.590s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur="2.625s" to="hidden"/></tspan><tspan>0<set attributeName="visibility" begin="0s" dur="2.660s" to="hidden"/></tspan><tspan>H<set attributeName="visibility" begin="0s" dur="2.695s" to="hidden"/></tspan><tspan>z<set attributeName="visibility" begin="0s" dur="2.730s" to="hidden"/></tspan></text><path d="M72 284h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:1.1s;--shimmer-delay:14s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 293)"><rect width="24" height="22" x="2" y="3" class="draw" rx="3"/><path d="M2 9h24M6 6h1m3 0h1m-3 8 4 4-4 4m8 0h5" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 270)"><tspan>O<set attributeName="visibility" begin="0s" dur="1.300s" to="hidden"/></tspan><tspan>p<set attributeName="visibility" begin="0s" dur="1.335s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.370s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="1.405s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.440s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="1.475s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur="1.510s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur="1.545s" to="hidden"/></tspan><tspan>g<set attributeName="visibility" begin="0s" dur="1.580s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.615s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.650s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="1.685s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.720s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="1.755s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.790s" to="hidden"/></tspan><tspan>m<set attributeName="visibility" begin="0s" dur="1.825s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 270)"><tspan>C<set attributeName="visibility" begin="0s" dur="1.900s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="1.935s" to="hidden"/></tspan><tspan>c<set attributeName="visibility" begin="0s" dur="1.970s" to="hidden"/></tspan><tspan>h<set attributeName="visibility" begin="0s" dur="2.005s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="2.040s" to="hidden"/></tspan><tspan>O<set attributeName="visibility" begin="0s" dur="2.075s" to="hidden"/></tspan><tspan>S<set attributeName="visibility" begin="0s" dur="2.110s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.145s" to="hidden"/></tspan><tspan>x<set attributeName="visibility" begin="0s" dur="2.180s" to="hidden"/></tspan><tspan>8<set attributeName="visibility" begin="0s" dur="2.215s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur="2.250s" to="hidden"/></tspan><tspan>_<set attributeName="visibility" begin="0s" dur="2.285s" to="hidden"/></tspan><tspan>6<set attributeName="visibility" begin="0s" dur="2.320s" to="hidden"/></tspan><tspan>4<set attributeName="visibility" begin="0s" dur="2.355s" to="hidden"/></tspan></text><path d="M72 338h752" aria-hidden="true" class="divider" pathLength="1"/></g><g class="row" style="--delay:1.32s"><g aria-hidden="true" class="icon"><g class="icon-pulse" transform="translate(26 347)"><rect width="24" height="22" x="2" y="3" class="draw" rx="3"/><path d="M2 9h24M10 9v16m0-7h16" class="draw detail" pathLength="1"/></g></g><text xml:space="preserve" x="72" y="34" class="label" transform="translate(0 324)"><tspan>D<set attributeName="visibility" begin="0s" dur="1.520s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="1.555s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="1.590s" to="hidden"/></tspan><tspan>k<set attributeName="visibility" begin="0s" dur="1.625s" to="hidden"/></tspan><tspan>t<set attributeName="visibility" begin="0s" dur="1.660s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur="1.695s" to="hidden"/></tspan><tspan>p<set attributeName="visibility" begin="0s" dur="1.730s" to="hidden"/></tspan></text><text xml:space="preserve" x="72" y="55" transform="translate(0 324)"><tspan>K<set attributeName="visibility" begin="0s" dur="1.805s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="1.840s" to="hidden"/></tspan><tspan>E<set attributeName="visibility" begin="0s" dur="1.875s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="1.910s" to="hidden"/></tspan><tspan>P<set attributeName="visibility" begin="0s" dur="1.945s" to="hidden"/></tspan><tspan>l<set attributeName="visibility" begin="0s" dur="1.980s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.015s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="2.050s" to="hidden"/></tspan><tspan>m<set attributeName="visibility" begin="0s" dur="2.085s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.120s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.155s" to="hidden"/></tspan><tspan>·<set attributeName="visibility" begin="0s" dur="2.190s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.225s" to="hidden"/></tspan><tspan>W<set attributeName="visibility" begin="0s" dur="2.260s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.295s" to="hidden"/></tspan><tspan>y<set attributeName="visibility" begin="0s" dur="2.330s" to="hidden"/></tspan><tspan>l<set attributeName="visibility" begin="0s" dur="2.365s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.400s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur="2.435s" to="hidden"/></tspan><tspan>d<set attributeName="visibility" begin="0s" dur="2.470s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.505s" to="hidden"/></tspan><tspan>·<set attributeName="visibility" begin="0s" dur="2.540s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.575s" to="hidden"/></tspan><tspan>B<set attributeName="visibility" begin="0s" dur="2.610s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="2.645s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="2.680s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="2.715s" to="hidden"/></tspan><tspan>z<set attributeName="visibility" begin="0s" dur="2.750s" to="hidden"/></tspan><tspan>e<set attributeName="visibility" begin="0s" dur="2.785s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.820s" to="hidden"/></tspan><tspan>·<set attributeName="visibility" begin="0s" dur="2.855s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="2.890s" to="hidden"/></tspan><tspan>P<set attributeName="visibility" begin="0s" dur="2.925s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="2.960s" to="hidden"/></tspan><tspan>p<set attributeName="visibility" begin="0s" dur="2.995s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur="3.030s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="3.065s" to="hidden"/></tspan><tspan>u<set attributeName="visibility" begin="0s" dur="3.100s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="3.135s" to="hidden"/></tspan><tspan>-<set attributeName="visibility" begin="0s" dur="3.170s" to="hidden"/></tspan><tspan>D<set attributeName="visibility" begin="0s" dur="3.205s" to="hidden"/></tspan><tspan>a<set attributeName="visibility" begin="0s" dur="3.240s" to="hidden"/></tspan><tspan>r<set attributeName="visibility" begin="0s" dur="3.275s" to="hidden"/></tspan><tspan>k<set attributeName="visibility" begin="0s" dur="3.310s" to="hidden"/></tspan><tspan> <set attributeName="visibility" begin="0s" dur="3.345s" to="hidden"/></tspan><tspan>i<set attributeName="visibility" begin="0s" dur="3.380s" to="hidden"/></tspan><tspan>c<set attributeName="visibility" begin="0s" dur="3.415s" to="hidden"/></tspan><tspan>o<set attributeName="visibility" begin="0s" dur="3.450s" to="hidden"/></tspan><tspan>n<set attributeName="visibility" begin="0s" dur="3.485s" to="hidden"/></tspan><tspan>s<set attributeName="visibility" begin="0s" dur="3.520s" to="hidden"/></tspan></text></g></svg>
+    Desktop: KDE Plasma on Wayland, Breeze theme, Papirus-Dark icons.
+  </desc>
+
+  <defs>
+    <linearGradient id="divider-shimmer" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#8e58d4" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#8e58d4" stop-opacity=".12"/>
+      <stop offset="65%" stop-color="#b879d8" stop-opacity=".3"/>
+      <stop offset="85%" stop-color="#b879d8" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#8e58d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="divider-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="72" y="66" width="752" height="4"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .row {
+      --delay: 0s;
+      --shimmer-delay: 4s;
+    }
+
+    .row-2 {
+      --delay: .22s;
+      --shimmer-delay: 6s;
+    }
+
+    .row-3 {
+      --delay: .44s;
+      --shimmer-delay: 8s;
+    }
+
+    .row-4 {
+      --delay: .66s;
+      --shimmer-delay: 10s;
+    }
+
+    .row-5 {
+      --delay: .88s;
+      --shimmer-delay: 12s;
+    }
+
+    .row-6 {
+      --delay: 1.1s;
+      --shimmer-delay: 14s;
+    }
+
+    .row-7 {
+      --delay: 1.32s;
+    }
+
+    text {
+      font-family: "Segoe UI", Ubuntu, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      fill: #8e58d4;
+      white-space: pre;
+    }
+
+    .label {
+      font-weight: 600;
+      fill: #dc8add;
+    }
+
+    .icon {
+      fill: none;
+      stroke: #dc8add;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon .draw {
+      stroke-dasharray: 1;
+      animation: draw-icon 1.1s cubic-bezier(.45, 0, .25, 1) both;
+      animation-delay: var(--delay);
+    }
+
+    .icon .detail {
+      animation-delay: calc(var(--delay) + .18s);
+    }
+
+    .icon-pulse {
+      animation: breathe 6s ease-in-out infinite;
+      animation-delay: calc(var(--delay) + 1.4s);
+    }
+
+    .divider {
+      fill: none;
+      stroke: #8e58d4;
+      stroke-opacity: .16;
+      stroke-dasharray: 1;
+      animation: draw-divider 1s cubic-bezier(.65, 0, .35, 1) both;
+      animation-delay: calc(var(--delay) + .5s);
+    }
+
+    .shimmer {
+      fill: url(#divider-shimmer);
+      animation: sweep 12s linear infinite;
+      animation-delay: var(--shimmer-delay);
+      opacity: 0;
+    }
+
+    @keyframes draw-icon {
+      from {
+        stroke-dashoffset: 1;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+    }
+
+    @keyframes draw-divider {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .65;
+      }
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      12%, 76% {
+        opacity: .4;
+      }
+      90%, 100% {
+        transform: translateX(920px);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      text tspan {
+        visibility: visible !important;
+      }
+
+      .icon .draw,
+      .icon-pulse,
+      .divider {
+        animation: none;
+      }
+
+      .icon .draw,
+      .divider {
+        stroke-dasharray: none;
+      }
+
+      .shimmer {
+        display: none;
+        animation: none;
+      }
+    }
+  </style>
+
+  <!-- Keep each text element's contents on one line. -->
+
+  <!-- CPU -->
+  <g class="row">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="5" y="5"
+          width="18" height="18"
+          rx="3"/>
+
+        <rect
+          class="draw detail"
+          pathLength="1"
+          x="10" y="10"
+          width="8" height="8"
+          rx="1"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="
+            M9 1v4 M14 1v4 M19 1v4
+            M9 23v4 M14 23v4 M19 23v4
+            M1 9h4 M1 14h4 M1 19h4
+            M23 9h4 M23 14h4 M23 19h4
+          "/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>C<set attributeName="visibility" to="hidden" begin="0s" dur=".200s"/></tspan><tspan>P<set attributeName="visibility" to="hidden" begin="0s" dur=".235s"/></tspan><tspan>U<set attributeName="visibility" to="hidden" begin="0s" dur=".270s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>A<set attributeName="visibility" to="hidden" begin="0s" dur=".345s"/></tspan><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".380s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur=".415s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".450s"/></tspan><tspan>R<set attributeName="visibility" to="hidden" begin="0s" dur=".485s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur=".520s"/></tspan><tspan>z<set attributeName="visibility" to="hidden" begin="0s" dur=".555s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".590s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".625s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".660s"/></tspan><tspan>5<set attributeName="visibility" to="hidden" begin="0s" dur=".695s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".730s"/></tspan><tspan>5<set attributeName="visibility" to="hidden" begin="0s" dur=".765s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur=".800s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur=".835s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur=".870s"/></tspan><tspan>X<set attributeName="visibility" to="hidden" begin="0s" dur=".905s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- GPU -->
+  <g class="row row-2" transform="translate(0 54)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="2" y="6"
+          width="24" height="16"
+          rx="2"/>
+
+        <circle
+          class="draw detail"
+          pathLength="1"
+          cx="11" cy="14" r="5"/>
+
+        <circle
+          class="draw detail"
+          pathLength="1"
+          cx="11" cy="14" r="1"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="
+            M11 9v3 M16 14h-3
+            M11 19v-3 M6 14h3
+            M21 10v8
+            M6 22v3h12v-3
+            M2 6V3H0
+          "/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur=".420s"/></tspan><tspan>P<set attributeName="visibility" to="hidden" begin="0s" dur=".455s"/></tspan><tspan>U<set attributeName="visibility" to="hidden" begin="0s" dur=".490s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>N<set attributeName="visibility" to="hidden" begin="0s" dur=".565s"/></tspan><tspan>V<set attributeName="visibility" to="hidden" begin="0s" dur=".600s"/></tspan><tspan>I<set attributeName="visibility" to="hidden" begin="0s" dur=".635s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur=".670s"/></tspan><tspan>I<set attributeName="visibility" to="hidden" begin="0s" dur=".705s"/></tspan><tspan>A<set attributeName="visibility" to="hidden" begin="0s" dur=".740s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur=".775s"/></tspan><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur=".810s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur=".845s"/></tspan><tspan>F<set attributeName="visibility" to="hidden" begin="0s" dur=".880s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".915s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur=".950s"/></tspan><tspan>c<set attributeName="visibility" to="hidden" begin="0s" dur=".985s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.020s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.055s"/></tspan><tspan>R<set attributeName="visibility" to="hidden" begin="0s" dur="1.090s"/></tspan><tspan>T<set attributeName="visibility" to="hidden" begin="0s" dur="1.125s"/></tspan><tspan>X<set attributeName="visibility" to="hidden" begin="0s" dur="1.160s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.195s"/></tspan><tspan>4<set attributeName="visibility" to="hidden" begin="0s" dur="1.230s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.265s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur="1.300s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.335s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.370s"/></tspan><tspan>A<set attributeName="visibility" to="hidden" begin="0s" dur="1.405s"/></tspan><tspan>E<set attributeName="visibility" to="hidden" begin="0s" dur="1.440s"/></tspan><tspan>R<set attributeName="visibility" to="hidden" begin="0s" dur="1.475s"/></tspan><tspan>O<set attributeName="visibility" to="hidden" begin="0s" dur="1.510s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.545s"/></tspan><tspan>8<set attributeName="visibility" to="hidden" begin="0s" dur="1.580s"/></tspan><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur="1.615s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.650s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- RAM -->
+  <g class="row row-3" transform="translate(0 108)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="1" y="7"
+          width="26" height="14"
+          rx="2"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="
+            M6 11h4v6H6z
+            M12 11h4v6h-4z
+            M18 11h4v6h-4z
+          "/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="
+            M5 21v4 M9 21v4 M13 21v2
+            M17 21v4 M21 21v4 M25 21v4
+          "/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>R<set attributeName="visibility" to="hidden" begin="0s" dur=".640s"/></tspan><tspan>A<set attributeName="visibility" to="hidden" begin="0s" dur=".675s"/></tspan><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".710s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur=".785s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur=".820s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur=".855s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur=".890s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur=".925s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".960s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".995s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.030s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.065s"/></tspan><tspan>F<set attributeName="visibility" to="hidden" begin="0s" dur="1.100s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur="1.135s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.170s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.205s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.240s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.275s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.310s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.345s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.380s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.415s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.450s"/></tspan><tspan>3<set attributeName="visibility" to="hidden" begin="0s" dur="1.485s"/></tspan><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="1.520s"/></tspan><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur="1.555s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.590s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.625s"/></tspan><tspan>(<set attributeName="visibility" to="hidden" begin="0s" dur="1.660s"/></tspan><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="1.695s"/></tspan><tspan>x<set attributeName="visibility" to="hidden" begin="0s" dur="1.730s"/></tspan><tspan>1<set attributeName="visibility" to="hidden" begin="0s" dur="1.765s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur="1.800s"/></tspan><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur="1.835s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.870s"/></tspan><tspan>)<set attributeName="visibility" to="hidden" begin="0s" dur="1.905s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.940s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.975s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="2.010s"/></tspan><tspan>R<set attributeName="visibility" to="hidden" begin="0s" dur="2.045s"/></tspan><tspan>4<set attributeName="visibility" to="hidden" begin="0s" dur="2.080s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Motherboard -->
+  <g class="row row-4" transform="translate(0 162)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="2" y="2"
+          width="24" height="24"
+          rx="2"/>
+
+        <rect
+          class="draw detail"
+          pathLength="1"
+          x="7" y="7"
+          width="9" height="9"
+          rx="1"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M20 6v10 M23 6v10 M6 21h16 M6 24h10"/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur=".860s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur=".895s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur=".930s"/></tspan><tspan>h<set attributeName="visibility" to="hidden" begin="0s" dur=".965s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.000s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.035s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur="1.070s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur="1.105s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.140s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.175s"/></tspan><tspan>d<set attributeName="visibility" to="hidden" begin="0s" dur="1.210s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>G<set attributeName="visibility" to="hidden" begin="0s" dur="1.285s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.320s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur="1.355s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.390s"/></tspan><tspan>b<set attributeName="visibility" to="hidden" begin="0s" dur="1.425s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.460s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.495s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.530s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.565s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="1.600s"/></tspan><tspan>5<set attributeName="visibility" to="hidden" begin="0s" dur="1.635s"/></tspan><tspan>5<set attributeName="visibility" to="hidden" begin="0s" dur="1.670s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.705s"/></tspan><tspan>M<set attributeName="visibility" to="hidden" begin="0s" dur="1.740s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.775s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.810s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur="1.845s"/></tspan><tspan>3<set attributeName="visibility" to="hidden" begin="0s" dur="1.880s"/></tspan><tspan>H<set attributeName="visibility" to="hidden" begin="0s" dur="1.915s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Displays -->
+  <g class="row row-5" transform="translate(0 216)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="1" y="2"
+          width="26" height="18"
+          rx="2"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M1 16h26 M14 20v5 M8 26h12"/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.080s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.115s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.150s"/></tspan><tspan>p<set attributeName="visibility" to="hidden" begin="0s" dur="1.185s"/></tspan><tspan>l<set attributeName="visibility" to="hidden" begin="0s" dur="1.220s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.255s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.290s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.325s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="1.400s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.435s"/></tspan><tspan>×<set attributeName="visibility" to="hidden" begin="0s" dur="1.470s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.505s"/></tspan><tspan>1<set attributeName="visibility" to="hidden" begin="0s" dur="1.540s"/></tspan><tspan>9<set attributeName="visibility" to="hidden" begin="0s" dur="1.575s"/></tspan><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="1.610s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.645s"/></tspan><tspan>×<set attributeName="visibility" to="hidden" begin="0s" dur="1.680s"/></tspan><tspan>1<set attributeName="visibility" to="hidden" begin="0s" dur="1.715s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.750s"/></tspan><tspan>8<set attributeName="visibility" to="hidden" begin="0s" dur="1.785s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="1.820s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.855s"/></tspan><tspan>·<set attributeName="visibility" to="hidden" begin="0s" dur="1.890s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.925s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur="1.960s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.995s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur="2.030s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="2.065s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur="2.100s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="2.135s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur="2.170s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.205s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur="2.240s"/></tspan><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="2.275s"/></tspan><tspan>2<set attributeName="visibility" to="hidden" begin="0s" dur="2.310s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="2.345s"/></tspan><tspan>3<set attributeName="visibility" to="hidden" begin="0s" dur="2.380s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="2.415s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="2.450s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.485s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.520s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="2.555s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.590s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur="2.625s"/></tspan><tspan>0<set attributeName="visibility" to="hidden" begin="0s" dur="2.660s"/></tspan><tspan>H<set attributeName="visibility" to="hidden" begin="0s" dur="2.695s"/></tspan><tspan>z<set attributeName="visibility" to="hidden" begin="0s" dur="2.730s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Operating system -->
+  <g class="row row-6" transform="translate(0 270)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="2" y="3"
+          width="24" height="22"
+          rx="3"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M2 9h24 M6 6h1 M10 6h1"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M8 14l4 4-4 4 M16 22h5"/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>O<set attributeName="visibility" to="hidden" begin="0s" dur="1.300s"/></tspan><tspan>p<set attributeName="visibility" to="hidden" begin="0s" dur="1.335s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.370s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="1.405s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.440s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.475s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="1.510s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="1.545s"/></tspan><tspan>g<set attributeName="visibility" to="hidden" begin="0s" dur="1.580s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.615s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.650s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="1.685s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.720s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.755s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.790s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur="1.825s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>C<set attributeName="visibility" to="hidden" begin="0s" dur="1.900s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="1.935s"/></tspan><tspan>c<set attributeName="visibility" to="hidden" begin="0s" dur="1.970s"/></tspan><tspan>h<set attributeName="visibility" to="hidden" begin="0s" dur="2.005s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="2.040s"/></tspan><tspan>O<set attributeName="visibility" to="hidden" begin="0s" dur="2.075s"/></tspan><tspan>S<set attributeName="visibility" to="hidden" begin="0s" dur="2.110s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.145s"/></tspan><tspan>x<set attributeName="visibility" to="hidden" begin="0s" dur="2.180s"/></tspan><tspan>8<set attributeName="visibility" to="hidden" begin="0s" dur="2.215s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur="2.250s"/></tspan><tspan>_<set attributeName="visibility" to="hidden" begin="0s" dur="2.285s"/></tspan><tspan>6<set attributeName="visibility" to="hidden" begin="0s" dur="2.320s"/></tspan><tspan>4<set attributeName="visibility" to="hidden" begin="0s" dur="2.355s"/></tspan></text>
+
+    <g aria-hidden="true">
+      <path class="divider" pathLength="1" d="M72 68H824"/>
+      <g clip-path="url(#divider-clip)">
+        <rect class="shimmer"
+          x="-100" y="67.3"
+          width="100" height="1.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Desktop -->
+  <g class="row row-7" transform="translate(0 324)">
+    <g class="icon" transform="translate(26 23)" aria-hidden="true">
+      <g class="icon-pulse">
+        <rect
+          class="draw"
+          pathLength="1"
+          x="2" y="3"
+          width="24" height="22"
+          rx="3"/>
+
+        <path
+          class="draw detail"
+          pathLength="1"
+          d="M2 9h24 M10 9v16 M10 18h16"/>
+      </g>
+    </g>
+
+    <text x="72" y="34" class="label" xml:space="preserve"><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.520s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="1.555s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="1.590s"/></tspan><tspan>k<set attributeName="visibility" to="hidden" begin="0s" dur="1.625s"/></tspan><tspan>t<set attributeName="visibility" to="hidden" begin="0s" dur="1.660s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur="1.695s"/></tspan><tspan>p<set attributeName="visibility" to="hidden" begin="0s" dur="1.730s"/></tspan></text>
+
+    <text x="72" y="55" xml:space="preserve"><tspan>K<set attributeName="visibility" to="hidden" begin="0s" dur="1.805s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="1.840s"/></tspan><tspan>E<set attributeName="visibility" to="hidden" begin="0s" dur="1.875s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="1.910s"/></tspan><tspan>P<set attributeName="visibility" to="hidden" begin="0s" dur="1.945s"/></tspan><tspan>l<set attributeName="visibility" to="hidden" begin="0s" dur="1.980s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.015s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="2.050s"/></tspan><tspan>m<set attributeName="visibility" to="hidden" begin="0s" dur="2.085s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.120s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.155s"/></tspan><tspan>·<set attributeName="visibility" to="hidden" begin="0s" dur="2.190s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.225s"/></tspan><tspan>W<set attributeName="visibility" to="hidden" begin="0s" dur="2.260s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.295s"/></tspan><tspan>y<set attributeName="visibility" to="hidden" begin="0s" dur="2.330s"/></tspan><tspan>l<set attributeName="visibility" to="hidden" begin="0s" dur="2.365s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.400s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="2.435s"/></tspan><tspan>d<set attributeName="visibility" to="hidden" begin="0s" dur="2.470s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.505s"/></tspan><tspan>·<set attributeName="visibility" to="hidden" begin="0s" dur="2.540s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.575s"/></tspan><tspan>B<set attributeName="visibility" to="hidden" begin="0s" dur="2.610s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="2.645s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="2.680s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="2.715s"/></tspan><tspan>z<set attributeName="visibility" to="hidden" begin="0s" dur="2.750s"/></tspan><tspan>e<set attributeName="visibility" to="hidden" begin="0s" dur="2.785s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.820s"/></tspan><tspan>·<set attributeName="visibility" to="hidden" begin="0s" dur="2.855s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="2.890s"/></tspan><tspan>P<set attributeName="visibility" to="hidden" begin="0s" dur="2.925s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="2.960s"/></tspan><tspan>p<set attributeName="visibility" to="hidden" begin="0s" dur="2.995s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="3.030s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="3.065s"/></tspan><tspan>u<set attributeName="visibility" to="hidden" begin="0s" dur="3.100s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="3.135s"/></tspan><tspan>-<set attributeName="visibility" to="hidden" begin="0s" dur="3.170s"/></tspan><tspan>D<set attributeName="visibility" to="hidden" begin="0s" dur="3.205s"/></tspan><tspan>a<set attributeName="visibility" to="hidden" begin="0s" dur="3.240s"/></tspan><tspan>r<set attributeName="visibility" to="hidden" begin="0s" dur="3.275s"/></tspan><tspan>k<set attributeName="visibility" to="hidden" begin="0s" dur="3.310s"/></tspan><tspan> <set attributeName="visibility" to="hidden" begin="0s" dur="3.345s"/></tspan><tspan>i<set attributeName="visibility" to="hidden" begin="0s" dur="3.380s"/></tspan><tspan>c<set attributeName="visibility" to="hidden" begin="0s" dur="3.415s"/></tspan><tspan>o<set attributeName="visibility" to="hidden" begin="0s" dur="3.450s"/></tspan><tspan>n<set attributeName="visibility" to="hidden" begin="0s" dur="3.485s"/></tspan><tspan>s<set attributeName="visibility" to="hidden" begin="0s" dur="3.520s"/></tspan></text>
+  </g>
+</svg>
